@@ -1,0 +1,366 @@
+/* thanks : https://github.com/franciscop/picnic/blob/master/picnic.css , bulma */
+
+* {
+    margin: 0;
+    padding: 0;
+    /* font-size: 14px; */
+    box-sizing: border-box;
+}
+
+article,
+aside,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+hr {
+  background-color: whitesmoke;
+  border: none;
+  height: 2px;
+  margin: 1.5rem 0;
+}
+
+label {
+  font-weight: 700;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* columns */
+.row {
+    display: flex;
+}
+.column {
+    /* flex-basis: 0; */
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0.75rem;
+}
+
+/* nav */
+nav.navbar {
+    padding: 15px 0;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    z-index: 10000;
+}
+nav.navbar.navbar-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+nav.navbar.navbar-two {
+    position: fixed;
+    top: 49px;
+    left: 0;
+    right: 0;
+}
+
+.navbar-two{
+  position: fixed;
+  top: 100px;
+}
+
+
+.n-flex{
+    display: flex;
+}
+.n-one{
+    flex:1;
+}
+.n-two{
+    flex:2;
+}
+.n-three{
+    flex:1;
+    text-align: right;
+}
+.n-label{
+    margin-right: 10px;
+}
+
+/* button */
+[class^="btn-"]{
+  border: #ccc 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-color: transparent;
+  color: #fff;
+}
+.btn-default{
+    background-color: #fff;
+    color: #363636;
+    border-color: #ccc;
+}
+.btn-primary{
+    background-color: #00d1b2;
+}
+.btn-link{
+    background-color: #3273dc;
+}
+.btn-info{
+    background-color: #209cee;
+}
+.btn-success{
+    background-color: #23d160;
+}
+.btn-warning{
+    background-color: #ffdd57;
+    color: #363636;
+}
+.btn-danger{
+    background-color: #ff3860;
+}
+
+/* button outline */
+.btn-outline{
+    background-color: transparent;
+}
+.btn-default.btn-outline{
+    background-color: #fff;
+    color: #363636;
+    border-color: #ccc;
+}
+.btn-primary.btn-outline {
+  border-color: #00d1b2;
+  color: #00d1b2;
+}
+.btn-link.btn-outline {
+  border-color: #3273dc;
+  color: #3273dc;
+}
+.btn-info.btn-outline {
+  border-color: #209cee;
+  color: #209cee;
+}
+.btn-success.btn-outline {
+  border-color: #23d160;
+  color: #23d160;
+}
+.btn-warning.btn-outline {
+  border-color: #ffdd57;
+  color: #ffdd57;
+}
+.btn-danger.btn-outline {
+  border-color: #ff3860;
+  color: #ff3860;
+}
+
+/* input */
+input[type=text].input, input[type=password].input, input[type=date].input, input[type="time"].input, select.input, textarea.input{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}/*
+input[type=checkbox].input, input[type=radio].input{
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.25;
+  padding: 10px 5px;
+  }*/
+
+  /* text */
+  .text-title{
+    font-size: 1.17em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* group */
+/* thanks : https://philipwalton.github.io/solved-by-flexbox/demos/input-add-ons/ */
+.group {
+  display: flex;
+  margin-bottom: 8px;
+}
+.group-field:first-child,
+.group-item:first-child {
+  border-radius: 2px 0 0 2px;
+}
+.group-field,
+.group-item {
+  border: 1px solid rgba(147, 128, 108, 0.25);
+  padding: 0.5em 0.75em;
+}
+.group-item {
+  background-color: rgba(147, 128, 108, 0.1);
+  color: #666666;
+  font: inherit;
+  font-weight: normal;
+}
+.group-field {
+  flex: 1;
+}
+.group-field:not(:first-child) {
+  border-left: 0;
+}
+.group-field:not(:last-child) {
+  border-right: 0;
+}
+.group-field:last-child,
+.group-item:last-child, .group > :last-child {
+  border-radius: 0 2px 2px 0;
+}
+
+/* card */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card-content {
+    padding: 2px 16px;
+}
+.card-footer{
+
+}
+
+/* dropimage */
+.dropimage {
+  position: relative;
+  display: block;
+  padding: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0;
+  margin: 0.3em 0;
+  border-radius: 0.2em;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center center;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNjQwIiB2ZXJzaW9uPSIxLjEiPjxnIHN0eWxlPSJmaWxsOiMzMzMiPjxwYXRoIGQ9Ik0gMTg3IDIzMCBDIDE3NSAyMzAgMTY1IDI0MCAxNjUgMjUyIEwgMTY1IDMwMCBMIDE2NSA0MDggQyAxNjUgNDIwIDE3NSA0MzAgMTg3IDQzMCBMIDQ2MyA0MzAgQyA0NzUgNDMwIDQ4NSA0MjAgNDg1IDQwOCBMIDQ4NSAzMDAgTCA0ODUgMjUyIEMgNDg1IDI0MCA0NzUgMjMwIDQ2MyAyMzAgTCAxODcgMjMwIHogTSAzNjAgMjU2IEEgNzAgNzIgMCAwIDEgNDMwIDMyOCBBIDcwIDcyIDAgMCAxIDM2MCA0MDAgQSA3MCA3MiAwIDAgMSAyOTAgMzI4IEEgNzAgNzIgMCAwIDEgMzYwIDI1NiB6Ii8+PGNpcmNsZSBjeD0iMzYwIiBjeT0iMzMwIiByPSI0MSIvPjxwYXRoIGQ9Im0yMDUgMjI1IDUtMTAgMjAgMCA1IDEwLTMwIDAiLz48cGF0aCBkPSJNMjg1IDIwMEwyNzAgMjI1IDM3NiAyMjUgMzYxIDIwMCAyODUgMjAwek0zMTAgMjA1TDMzNyAyMDUgMzM3IDIxOCAzMTAgMjE4IDMxMCAyMDV6Ii8+PHBhdGggZD0ibTQwNSAyMjUgNS0xMCAyMCAwIDUgMTAtMzAgMCIvPjwvZz48L3N2Zz4=); 
+}
+.dropimage input {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute; 
+}
+
+/* carousel eg.category */
+.carousel{
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.carousel-row{
+
+}
+.carousel-col{
+    display: inline-block;
+    border: 1px #ccc solid;
+    text-align: center;
+    width:100px;
+    height:80px;
+}
+
+
+/* header */
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+
+
+
+
+
+/*
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+[hidden],
+template {
+    display: none;
+}
+a {
+    background-color: transparent;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+b,
+strong {
+    font-weight: bold;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+button {
+    overflow: visible;
+}
+button,
+select {
+    text-transform: none;
+} */

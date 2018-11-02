@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="budden.css">
+</head>
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  background-color: green;
+}
+li {
+  /* float: left; */
+  display: inline;
+}
+li a {
+  /* display: block; */
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+.gallery{
+  width: 100%;
+}
+.gallery-left{
+  width: 40%;
+  float: left;
+}
+.gallery-right{
+  width: 60%;
+  float: left;
+  padding-left: 20px;
+}
+.gallery-small{
+ overflow-y: hidden;
+ white-space: nowrap;
+ position: relative;
+}
+.gallery-prev{
+ position: absolute;
+ top: 50%;
+ left: 5px;
+}
+.gallery-next{
+ position: absolute;
+ top: 50%;
+ right: 5px;
+}
+
+
+/* screen <= 768 For mobile phones */
+@media screen and (max-width: 768px){
+  .gallery-left{
+    width: 100%;
+  }
+  .gallery-right{
+    width: 100%;
+  }
+  
+}
+
+
+.touchspin-input {
+  height: 2.5rem;
+  padding: .175rem .5rem;
+  width: 4rem;
+  float: left;
+}
+
+.touchspin-btn-group {
+  float: left;
+}
+
+.touchspin-btn {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  margin-left: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.25);
+  height: 1.3125rem;
+}
+.touchspin-down{
+  margin-top: -2px;
+}
+
+
+
+</style>
+
+<body>
+
+
+  <div class="container">
+
+
+
+
+    <div class="gallery">
+      <div class="gallery-left">
+        <div class="gallery-medium">
+          <ul>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:100%;"></li>
+          </ul>
+        </div>
+        <div class="gallery-small">
+          <ul>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+            <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+          </ul>
+          <a class="gallery-prev" onclick="plusSlides(-1)">❮</a>
+          <a class="gallery-next" onclick="plusSlides(1)">❯</a>
+        </div>
+      </div>
+      <div class="gallery-right">
+
+        <div class="name"><h3>product name</h3></div>
+        <div class="price">price 30.05B</div>
+        <div class="combination">combination</div>
+        <div class="qty">
+          qty     
+          <div class="touchspin">
+            <input type="text" name="qty" id="quantity_wanted" value="1" class="touchspin-input" min="1">
+            <span class="touchspin-btn-group">
+              <button type="button" class="touchspin-btn touchspin-up">a</button>
+              <button type="button" class="touchspin-btn touchspin-down">b</button>
+            </span>
+          </div>
+        </div>
+
+        <div class="add-cart">add-cart</div>
+
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="gallery">
+      <div class="description">description</div>
+    </div>
+
+
+
+
+
+  </div>
+
+
+  <script src="budden.js"></script>
+</body>
+
+</html>
