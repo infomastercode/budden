@@ -30,28 +30,28 @@ label {
 }
 
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    width: 80%;
+    margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
+.navbar-smartphone{
+  display: none;
 }
 
-@media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
+/* smart phone */
+@media (max-width: 768px) {
+  body{
+    background-color: #FFE;
+  }
+  .container {
+    width: 95%;
+  }
+  nav {
+    display: none;
+  }
+  .navbar-smartphone{
+    display: block;
+  }
 }
 
 /* columns */
@@ -67,42 +67,84 @@ label {
 
 /* nav */
 nav.navbar {
-    padding: 15px 0;
-    background: #fff;
-    border-bottom: 1px solid #ccc;
-    z-index: 10000;
+  width: 100%;
+  background: #fff;
+  /* border-bottom: 1px solid #ccc; */
+  z-index: 1000;
 }
-nav.navbar.navbar-top {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
+/* clear floats after */
+/*
+nav.navbar:after {
+    content: "";
+    display: table;
+    clear: both;
+}*/
+/*
+nav.navbar > .n-row-one {
+  padding: 8px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}*/
+/*
 nav.navbar.navbar-two {
-    position: fixed;
-    top: 49px;
-    left: 0;
-    right: 0;
+  padding: 10px 0;
+  position: fixed;
+  top: 35px;
+  left: 0;
+  right: 0;
 }
-
+*/
+/*
 .navbar-two{
   position: fixed;
   top: 100px;
+}*/
+.n-row-one{
+  border-bottom: 1px solid #ccc;
 }
+.n-row-two{
+  border-bottom: 1px solid #ccc;
+}
+.clearfix{
+  content: '';
+  clear: both;
+  display: table;
+}
+/*
+.n-row-one::after{
+  content: '';
+  clear: both;
+  display: table;
+}*/
+/*
+.n-row-two::after{
+  content: '';
+  clear: both;
+  display: table;
+}*/
 
 
 .n-flex{
     display: flex;
 }
 .n-one{
-    flex:1;
+  float: left;
+  width: 20%;
+    /* flex:1; */
 }
 .n-two{
-    flex:2;
+  float: left;
+  width: 50%;
+    /* flex:2; */
 }
 .n-three{
+  float: right;
+  width: 30%;
+  /*
     flex:1;
-    text-align: right;
+    text-align: right;*/
 }
 .n-label{
     margin-right: 10px;
@@ -200,6 +242,7 @@ input[type=checkbox].input, input[type=radio].input{
 
 /* group */
 /* thanks : https://philipwalton.github.io/solved-by-flexbox/demos/input-add-ons/ */
+/*
 .group {
   display: flex;
   margin-bottom: 8px;
@@ -231,6 +274,32 @@ input[type=checkbox].input, input[type=radio].input{
 .group-field:last-child,
 .group-item:last-child, .group > :last-child {
   border-radius: 0 2px 2px 0;
+}
+*/
+.group {
+  /*
+    position: relative; */
+    display: table;
+    width: 100%;
+}
+
+.group-item {
+  /* display: table-cell; */
+  border: 1px solid rgba(147, 128, 108, 0.25);
+  padding: 5px 10px;
+  width: 20%;
+}
+.group-field{
+  /* display: table-cell; */
+  border: 1px solid rgba(147, 128, 108, 0.25);
+  padding: 5px 10px;
+  width: 50%;
+}
+.group > :last-child {
+  width: 20%;
+ /* display: table-cell;
+  position: absolute;
+  right: 0; */
 }
 
 /* card */
