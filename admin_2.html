@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>TEST</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="budden.css">
+    <link rel="stylesheet" href="budden-admin.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <a class="navbar navbar-brand text-label" href="index.html">Start Bootstrap</a>
+      <button id="sidebar_toggle" class="btn-bars">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="navbar navbar-right">
+        <li class="navbar nav-item">
+          <a class="navbar-toggle" href="#"><i class="fas fa-bell fa-fw"></i></a>
+          <div class="navbar dropdown-menu">
+            <a class="navbar dropdown-item" href="#">Action</a>
+            <a class="navbar dropdown-item" href="#">Another action</a>
+            <a class="navbar dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="navbar nav-item">
+          <a class="navbar-toggle" href="#"><i class="fas fa-envelope fa-fw"></i></a>
+          <div class="navbar dropdown-menu">
+            <a class="navbar dropdown-item" href="#">Action</a>
+            <a class="navbar dropdown-item" href="#">Another action</a>
+            <a class="navbar dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="navbar nav-item">
+          <a class="navbar-toggle" href="#"><i class="fas fa-user-circle fa-fw"></i></a>
+          <div class="navbar dropdown-menu">
+            <a class="navbar dropdown-item" href="#">Action</a>
+            <a class="navbar dropdown-item" href="#">Another action</a>
+            <a class="navbar dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="wrapper">
+      <ul id="wrapper_sidebar" class="sidebar side-show">
+        <li class="sidebar-list"><a href="#"><i class="fas fa-fw fa-folder"></i> Dashboard</a></li>
+        <li class="sidebar-list">
+          <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="menu-catalog"><i class="fas fa-fw fa-folder"></i> Catalog</a>
+          <div class="sidebar-dropdown" id="menu-catalog">
+            <a class="sidebar-item" href="#Tel">Category</a>
+            <a class="sidebar-item active" href="#Email">Product</a>
+          </div>
+        </li>
+        <li class="sidebar-list">
+          <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="menu-sales"><i class="fas fa-fw fa-folder"></i> Sales</a>
+          <div class="sidebar-dropdown" id="menu-sales">
+            <a class="sidebar-item" href="#orders">Orders</a>
+            <a class="sidebar-item active" href="#Email">Email</a>
+            <a class="sidebar-item" href="#Address">Address</a>
+          </div>
+        </li>
+        <li class="sidebar-list">
+          <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="menu-report"><i class="fas fa-fw fa-folder"></i> Report</a>
+          <div class="sidebar-dropdown" id="menu-report">
+            <a class="sidebar-item" href="#stock">Stock</a>
+          </div>
+        </li>
+        <li class="sidebar-list"><a href="#system"><i class="fas fa-fw fa-folder"></i> System</a></li>
+        <li class="sidebar-list"><a href="#contact"><i class="fas fa-fw fa-folder"></i> Contact</a></li>
+      </ul>
+      <div style="padding-top: 50px;"></div>
+      <div id="wrapper_content">
+        <h2>Sidenav Push Example</h2>
+
+
+        <label>แขวง / ตำบล</label>
+        <input type="text" name="sub_distinct" value="" id="input_sub_distinct" class="input">
+        <p app-invalid="sub_distinct"></p>
+        
+      </div>
+    </div>
+
+    <script src="budden-admin.js"></script>
+  </body>
+
+</html>

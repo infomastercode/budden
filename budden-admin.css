@@ -1,0 +1,125 @@
+
+
+.navbar-admin{
+    padding: 12px 0px;
+}
+
+.navbar-admin.navbar-dark{
+    background-color: #343a40;
+}
+
+.navbar-admin > .navbar-brand{
+    color: #fff;
+}
+
+.btn-bars{
+    background-color: #343a40;
+    color: #fff;
+}
+
+.navbar-admin > .navbar-right{
+    float: right;
+}
+
+ul.navbar-right > li{
+    display: inline-block;
+}
+
+ul.navbar-right > li > a{
+    color: #818181;
+}
+
+ul.navbar-right > li > a:hover {
+    background-color: transparent; 
+    color: #FFF;
+}
+
+.navbar-item{
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    background-color: #212529;
+    overflow-x: hidden;
+    padding-top: 20px;
+    width: 0;
+    display: none;
+}
+
+.sidebar.side-show{
+    width: 200px;
+    display: block;
+}
+
+#wrapper_content{
+    margin-left: 200px;
+}
+
+.sidebar * {
+    /*    border: 1px greenyellow solid;*/
+}
+
+.sidebar > .sidebar-list {
+    display: block;
+    line-height: 2;
+}
+
+.sidebar > .sidebar-list a:hover {
+    background-color: transparent; 
+    color: #fff;
+}
+
+.sidebar > .sidebar-list > a {
+    display: block;
+    text-align: left;
+    padding: 0 0 0 10px;
+}
+
+.sidebar-dropdown{
+    margin: 0 12px;
+    border-radius: .25rem;
+    background-color: #343a40;
+    display: none;
+}
+
+.sidebar-dropdown.show{
+    display: block;
+}
+
+.sidebar-dropdown > .sidebar-item {
+    display: block;
+    text-align: left;
+    padding: 0;
+    padding-left: 20px;
+}
+
+.sidebar-dropdown > .sidebar-item.active {
+    background-color:#666666;
+}
+
+.sidebar-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    float: right;
+    top: 15px;
+    position: relative;
+    margin-right: 15px;
+}
+
+
+
+/* screen <= 768 For mobile phones */
+@media screen and (max-width: 768px) {
+
+}

@@ -4,13 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    /*    border: 1px greenyellow solid;*/
+    /*    border: 1px greenyellow solid;   */
 }
-/** {
+body {
+    font-size: 14px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}*/
-article,
+}
+/*article,
 aside,
 footer,
 header,
@@ -19,58 +19,29 @@ main,
 nav,
 section {
     display: block;
-}
+}*/
 hr {
     background-color: whitesmoke;
     border: none;
     height: 2px;
-    margin: 1.5rem 0;
+    margin: 20px 0;
 }
-label {
-    /*    font-weight: 700;*/
-}
-
 a {
     text-decoration: none;
     color: #2196F3;
 }
-
 a:hover {
     text-decoration: underline;
 }
-
+button{
+    font: inherit;
+}
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    /* overflow: hidden; */
-    /* background-color: green; */
 }
-
-li {
-    /* float: left; */
-    display: inline;
-}
-
-ul > li {
+ul.inline > li {
     display: inline-block;
 }
-
-li a {
-    /* display: block; */
-    /*    color: white;*/
-    /*    text-align: center;
-        padding: 16px;*/
-    /*    text-decoration: none;*/
-}
-
-/*li a:hover {
-    background-color: #111111;
-}*/
-
-/** {
-    border: 1px greenyellow solid;
-}*/
 
 nav{
     position: fixed;
@@ -80,7 +51,6 @@ nav{
 }
 nav.navbar-white{
     background-color: transparent;
-
 }
 nav.navbar-dark{
     background-color: #343434;
@@ -90,22 +60,29 @@ nav .navbar-container{
     padding: 12px 0px;
     border-bottom: 1px solid #ccc;
 }
-
 .btn-bars{
     background-color: #343a40;
     color: #fff;
 }
-
-nav.navbar-smartphone{
+.navbar-item{
     display: none;
 }
-
-p[app-invalid]{
-    color: #e74c3c;
-    font-size: 12px;
-    margin-top: -3px;
+/*nav.navbar-smartphone{
+    display: none;
+}*/
+small[data-invalid]{
+    color: #ff3860;
 }
-
+.text-label{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.text-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
 .text-left {
     text-align: left;
 }
@@ -118,12 +95,9 @@ p[app-invalid]{
 .text-justify {
     text-align: justify;
 }
-
-.fa-trash{
-    color: #ff3860;
-    cursor: pointer;
+.bold{
+    font-weight: bold;
 }
-
 .container {
     width: 60%;
     margin: 0 auto;
@@ -132,9 +106,20 @@ p[app-invalid]{
     width: 100%;
     margin: 0 auto;
 }
+.form-group{
+    margin-bottom: 1rem;
+}
+.form-group::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.form-group > label {
+    padding: 5px 5px;
+}
 .row {
     padding: 10px 0;
-    width: 100%;
+    width: auto;
 }
 .row::after {
     content: "";
@@ -143,9 +128,8 @@ p[app-invalid]{
 }
 [class*="col-"] {
     float: left;
-    /*    padding: 15px;*/
+    padding: 0 15px;
 }
-
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -158,13 +142,11 @@ p[app-invalid]{
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
-
 /*.column {
     width: 25%;
      width: calc(25% - 10px); 
     float: left;
     border: 1px solid #ccc;
-    
     outline: 1px solid #ccc;
     outline-offset: -5px;
     padding: 10px 0;
@@ -325,6 +307,10 @@ nav {
     clear: both;
     display: table;
 }
+/*button {
+    font: normal;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}*/
 
 /* button */
 [class^="btn-"]{
@@ -334,6 +320,9 @@ nav {
     padding: 5px 12px;
     border-color: transparent;
     color: #fff;
+}
+a[class^="btn-"]{
+    text-decoration: none;
 }
 .btn-default{
     background-color: #fff;
@@ -395,14 +384,15 @@ nav {
 }
 
 /* input */
-input[type=text].input, input[type=password].input, input[type=date].input, input[type="time"].input, select.input, textarea.input{
+input[type=text].input, input[type=email].input, input[type=password].input, input[type=date].input, input[type="time"].input, select.input, textarea.input{
     width: 100%;
     padding: 10px 5px;
     /* margin: 8px 0; */
-    margin: 8px 0 10px 0;
+    /* margin: 8px 0 10px 0;*/
     border: 1px solid #ccc;
     border-radius: 4px;
-}/*
+}
+/*
 input[type=checkbox].input, input[type=radio].input{
   cursor: pointer;
   display: inline-block;
@@ -410,17 +400,6 @@ input[type=checkbox].input, input[type=radio].input{
   padding: 10px 5px;
   }*/
 
-/* text */
-.text-title{
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-.text-label{
-    font-size: 1.17em;
-    font-weight: bold;
-}
 
 /* group */
 /* thanks : https://philipwalton.github.io/solved-by-flexbox/demos/input-add-ons/ */
@@ -796,7 +775,6 @@ table.table {
     width: 100%;
     margin: 0 auto;
     z-index: 3;
-    /* background-color: green; */
 }
 .alert-box > .alert {
     width: 60%;
@@ -886,7 +864,7 @@ table.table {
 /* Style the list */
 ul.breadcrumb {
     padding: 10px 5px;
-    margin: 0 10px;
+    margin: 10px 0;
     background-color: #eee; 
     border-radius: .25rem;
 }
@@ -1050,94 +1028,15 @@ select {
     border: 0;
 }
 
-[data-tooltip]{
-    position: relative;
-}
-[data-tooltip]::before {
-    content: "";
-    position: absolute;
-    top:-6px;
-    left:50%;
-    transform: translateX(-50%);
-    border-width: 4px 6px 0 6px;
-    border-style: solid;
-    border-color: black transparent transparent transparent;
-    z-index: 100;
-    /*    visibility: hidden;*/
-}
-[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left:50%;
-    top:-6px;
-    transform: translateX(-50%)   translateY(-100%);
-    background-color: black;
-    text-align: center;
-    color: #fff;
-    padding: 5px 15px;
-    font-size: 12px;
-    min-width: 80px;
-    border-radius: 5px;
-    pointer-events: none;
-    /*    visibility: hidden;*/
-}
-
-[data-tooltip]:hover::after, [data-tooltip]:hover::before{
-    visibility: visible;
-}
-.tooltip-top::before{
-    left:50%;
-}
-.tooltip-top::after{
-    left:50%;
-}
-.tooltip-bottom::before{
-    top:100%;
-    margin-top:8px;
-    transform: translateX(-50%) translatey(-100%) rotate(-180deg)
-}
-.tooltip-bottom::after{
-    top:100%;
-    margin-top:8px;
-    transform: translateX(-50%) translateY(0%);
-}
-.tooltip-left::before{
-    left:0%;
-    top:50%;
-    margin-left:-12px;
-    transform:translatey(-50%) rotate(-90deg) 
-}
-.tooltip-left::after{
-    left:0%;
-    top:50%;
-    margin-left:-8px;
-    transform: translateX(-100%)   translateY(-50%);
-}
-.tooltip-right::before{
-    left:100%;
-    top:50%;
-    margin-left:1px;
-    transform:translatey(-50%) rotate(90deg)
-}
-.tooltip-right::after{
-    left:100%;
-    top:50%;
-    margin-left:8px;
-    transform: translateX(0%)   translateY(-50%);
-}
-
-
-
-button[class*="tooltip-"] {
-    outline: none;
-}
-
-
+/* tooltip*/
 [class*="tooltip-"] {
     position: relative;
     display: inline-block;
+    outline: none;
 }
+[class*="tooltip-"]:focus {
 
+}
 [class*="tooltip-"] > .tooltip-text {
     visibility: hidden;
     width: 120px;
@@ -1150,19 +1049,16 @@ button[class*="tooltip-"] {
     z-index: 1;
     pointer-events: none;
 }
-
 .tooltip-top > .tooltip-text {
     bottom: 150%;
     left: 50%;
     margin-left: -60px;
 }
-
 .tooltip-bottom > .tooltip-text {
     top: 150%;
     left: 50%;
     margin-left: -60px;
 }
-
 .tooltip-left > .tooltip-text {
     top: -5px;
     right: 110%;
@@ -1171,28 +1067,24 @@ button[class*="tooltip-"] {
     top: -5px;
     left: 110%;
 }
-
 [class*="tooltip-"] > .tooltip-text::after {
     content: "";
     position: absolute;
     border-width: 5px;
     border-style: solid;
 }
-
 .tooltip-top > .tooltip-text::after {
     top: 100%;
     left: 50%;
     margin-left: -5px;
     border-color: black transparent transparent transparent;
 }
-
 .tooltip-bottom > .tooltip-text::after {
     bottom: 100%;
     left: 50%;
     margin-left: -5px;
     border-color: transparent transparent black transparent;
 }
-
 .tooltip-left > .tooltip-text::after {
     top: 50%;
     left: 100%;
@@ -1205,122 +1097,12 @@ button[class*="tooltip-"] {
     margin-top: -5px;
     border-color: transparent black transparent transparent;
 }
-
 [class*="tooltip-"]:hover .tooltip-text {
     visibility: visible;
 }
 
 
-
-
-
-
-
-/*
-.tooltip .tooltip-text {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    left: 50%;
-    margin-left: -60px;
-}
-
-.tooltip .tooltip-text::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: black transparent transparent transparent;
-}
-
-.tooltip:hover .tooltip-text {
-    visibility: visible;
-}
-*/
-
-
-
-
-
-
-[tooltip]{
-    margin:20px;
-    position:relative;
-}
-
-[tooltip]::before {
-    content: "";
-    position: absolute;
-    top:-6px;
-    left:50%;
-    transform: translateX(-50%);
-    border-width: 4px 6px 0 6px;
-    border-style: solid;
-    border-color: rgba(0,0,0,0.7) transparent transparent     transparent;
-    z-index: 100;
-}
-[tooltip]::after {
-    content: attr(tooltip);
-    position: absolute;
-    left:50%;
-    top:-6px;
-    transform: translateX(-50%)   translateY(-100%);
-    background: rgba(0,0,0,0.7);
-    text-align: center;
-    color: #fff;
-    padding:4px 2px;
-    font-size: 12px;
-    min-width: 80px;
-    border-radius: 5px;
-    pointer-events: none;
-}
-[tooltip-position='left']::before{
-    left:0%;
-    top:50%;
-    margin-left:-12px;
-    transform:translatey(-50%) rotate(-90deg) 
-}
-[tooltip-position='top']::before{
-    left:50%;
-}
-[tooltip-position='bottom']::before{
-    top:100%;
-    margin-top:8px;
-    transform: translateX(-50%) translatey(-100%) rotate(-180deg)
-}
-[tooltip-position='right']::before{
-    left:100%;
-    top:50%;
-    margin-left:1px;
-    transform:translatey(-50%) rotate(90deg)
-}
-[tooltip-position='left']::after{
-    left:0%;
-    top:50%;
-    margin-left:-8px;
-    transform: translateX(-100%)   translateY(-50%);
-}
-[tooltip-position='top']::after{
-    left:50%;
-}
-[tooltip-position='bottom']::after{
-    top:100%;
-    margin-top:8px;
-    transform: translateX(-50%) translateY(0%);
-}
-[tooltip-position='right']::after{
-    left:100%;
-    top:50%;
-    margin-left:8px;
-    transform: translateX(0%)   translateY(-50%);
+.fa-trash{
+    color: #ff3860;
+    cursor: pointer;
 }

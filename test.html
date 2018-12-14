@@ -5,67 +5,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      .container-2{
-        display: flex;
-        /* justify-content: flex-end; */
-        justify-content: space-between;
-      }
-      .container-1{
-          display: flex;
-          align-items: start;
-      }
-      .container-1 div, .container-2 div{
-          border: 1px #ccc solid;
-          padding: 10px;
-      }
-      .box-1{
-          flex:2;
 
-      }
-      .box-2{
-          flex:1;
 
-      }
-      .box-3{
-          flex:1;
-
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+          /*    border: 1px greenyellow solid;*/
       }
 
-      .container-2-box{
-          flex-basis:27%;
-          /* width:27%; */
+
+
+      *{
+          border: 1px solid greenyellow;
       }
+
+      nav{
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+      }
+      nav.navbar-white{
+          background-color: transparent;
+
+      }
+      nav.navbar-dark{
+          background-color: #343434;
+      }
+      nav .navbar-container{
+          padding: 12px 0px;
+          border-bottom: 1px solid #ccc;
+      }
+
+      .container {
+          width: 60%;
+          margin: 0 auto;
+      }
+      .container-fluid {
+          width: 100%;
+          margin: 0 auto;
+      }
+      .row {
+          padding: 10px 0;
+          width: 100%;
+      }
+      .row::after {
+          content: "";
+          clear: both;
+          display: table;
+      }
+      [class*="col-"] {
+          float: left;
+          /*    padding: 15px;*/
+      }
+
+      .col-1 {width: 8.33%;}
+      .col-2 {width: 16.66%;}
+      .col-3 {width: 25%;}
+      .col-4 {width: 33.33%;}
+      .col-5 {width: 41.66%;}
+      .col-6 {width: 50%;}
+      .col-7 {width: 58.33%;}
+      .col-8 {width: 66.66%;}
+      .col-9 {width: 75%;}
+      .col-10 {width: 83.33%;}
+      .col-11 {width: 91.66%;}
+      .col-12 {width: 100%;}
+
+      .pull-right{
+          float: right;
+      }
+
+
     </style>
   </head>
   <body>
-    <div class="container-1">
-      <div class="box-1">
-        <h3>BOX 1 </h3>
-        <p>something something something something something something</p>
+
+    <nav id="navbar" class="navbar-white">
+      <div class="navbar-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <span>aaa</span>
+            </div>
+            <div class="col-6">
+              <span class="pull-right">aaa</span>
+              <span class="pull-right">aaa</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="box-2">
-        <h3>BOX 2 </h3>
-        <p>something something something something something something</p>
+      <div class="navbar-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">111</div>
+            <div class="col-4">111</div>
+            <div class="col-4">111</div>
+          </div>
+        </div>
       </div>
-      <div class="box-3">
-        <h3>BOX 3 </h3>
-        <p>something something something something something something</p>
-      </div>
+    </nav>
+
+    <div id="wrapper">
+      wrapper
     </div>
 
-    <div class="container-2">
-      <div class="container-2-box">
-        <h3>BOX 1 </h3>
-        <p>something something something something something something</p>
-      </div>
-      <div class="container-2-box">
-        <h3>BOX 2 </h3>
-        <p>something something something something something something</p>
-      </div>
-      <div class="container-2-box">
-        <h3>BOX 3 </h3>
-        <p>something something something something something something</p>
-      </div>
-    </div>
+    <!--
+    
+        <a href="#" class="z"><b class="z">Hello</b></a>
+        <a href="#"><b>Hi</b></a>
+    
+        <mark>
+          xxxx
+        </mark>
+    
+        <div class="in">
+          somethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomething
+        </div>
+    
+        <div class="container-1">
+          something something something something something somethingx something something something something something somethingx something something something something something somethingx something something something something something somethingx
+          something something something something something somethingx something something something something something somethingx something something something something something somethingx something something something something something somethingx
+          <div class="box-1">
+            <h3>BOX 1 </h3>
+            <p>something something something something something somethingx something something something something something somethingx something something something something something somethingx something something something something something somethingx</p>
+          </div>
+          <div class="box-2">
+            <h3>BOX 2 </h3>
+            <p>something something something something something something</p>
+          </div>
+          <div class="box-3">
+            <h3>BOX 3 </h3>
+            <p>something something something something something something</p>
+          </div>
+        </div>
+    
+        <div class="container-2">
+          <div class="container-2-box">
+            <h3>BOX 1 </h3>
+            <p>something something something something something something</p>
+          </div>
+          <div class="container-2-box">
+            <h3>BOX 2 </h3>
+            <p>something something something something something something</p>
+          </div>
+          <div class="container-2-box">
+            <h3>BOX 3 </h3>
+            <p>something something something something something something</p>
+          </div>
+        </div>-->
+
+    <script>
+      var n = document.getElementById("navbar").clientHeight; // INNER HEIGHT:
+      var b = document.getElementById("navbar").offsetHeight; //OUTER HEIGHT:
+      var c = document.getElementById("navbar").scrollHeight;
+
+      document.getElementById("wrapper").style.marginTop = n + "px";
+    </script>
   </body>
 </html>

@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="budden.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 
 <style>
@@ -82,6 +83,7 @@
  </nav>
 
  <div style="padding-top: 90px;"></div>
+
  <div class="container">
   <div class="text-title">Category</div>
 
@@ -89,21 +91,17 @@
   <div class="gallery">
     <div class="gallery-left">
       <div class="gallery-medium">
-        <ul>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:100%;"></li>
-        </ul>
+        <img src="https://www.w3schools.com/howto/img_forest.jpg">
       </div>
       <div class="gallery-small">
         <ul>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
-          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" alt="" style="width:150px;"></li>
+          <li><img src="https://www.w3schools.com/css/img_5terre.jpg" class="gallery-change"></li>
+          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" class="gallery-change"></li>
+          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" class="gallery-change"></li>
+          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" class="gallery-change"></li>
+          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" class="gallery-change"></li>
+          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" class="gallery-change"></li>
+          <li><img src="https://www.w3schools.com/howto/img_forest.jpg" class="gallery-change"></li>
         </ul>
         <a class="gallery-prev" onclick="plusSlides(-1)">❮</a>
         <a class="gallery-next" onclick="plusSlides(1)">❯</a>
@@ -130,9 +128,9 @@
         <span class="qty-label">price</span>
         <span class="qty-box">
           <div class="qty-group">
-            <input type='text'class="qty-input">
-            <button class="qty-btn qty-btn-up">a</button>
-            <button class="qty-btn qty-btn-down">b</button>
+            <input type='number'class="qty-input">
+            <button class="qty-btn qty-btn-up"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+            <button class="qty-btn qty-btn-down"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
           </div>
         </span>
         <span class="qty-label">pricexxxxxxxx</span>
@@ -161,7 +159,8 @@
 
 
 
-
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="budden.js"></script>
 </body>
 
 </html>
