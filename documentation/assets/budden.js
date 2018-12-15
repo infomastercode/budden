@@ -1,11 +1,12 @@
 
+/*
 var n = document.getElementById("navbar").clientHeight; // INNER HEIGHT:
 var b = document.getElementById("navbar").offsetHeight; //OUTER HEIGHT:
 var c = document.getElementById("navbar").scrollHeight;
 
 document.getElementById("wrapper").style.marginTop = n + "px";
 document.getElementById("sidebar").style.marginTop = (n - 1) + "px";
-
+*/
 
 
 

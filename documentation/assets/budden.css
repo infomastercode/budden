@@ -142,129 +142,6 @@ small[data-invalid]{
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
-/*.column {
-    width: 25%;
-     width: calc(25% - 10px); 
-    float: left;
-    border: 1px solid #ccc;
-    outline: 1px solid #ccc;
-    outline-offset: -5px;
-    padding: 10px 0;
-    text-align: center;
-}*/
-
-
-/* screen <= 768 For mobile phones */
-@media screen and (max-width: 768px) {
-    body{
-        background-color: #FFE;
-    }
-    .container {
-        width: 95%;
-    }
-    nav.navbar {
-        display: none;
-    }
-    nav.navbar-smartphone {
-        display: block;
-    }
-    .n-row-one .n-one {
-        width: 40% !important;
-    }
-    .n-row-one .n-two {
-        width: 60% !important;
-        text-align: right !important;
-    }
-    .n-row-two .n-one {
-        width: 90% !important;
-    }
-    .n-row-two .n-two {
-        width: 10% !important;
-        text-align: right !important;
-    }
-    .column {
-        width: 50% !important;
-    }
-    .c-column {
-        width: 50% !important;
-    }
-    .carousel{
-        white-space: nowrap;
-    }
-    .carousel-col{
-        width: 120px !important;
-    }
-    .carousel-col img{
-        width: 48px !important;
-    }
-    .gallery-left{
-        width: 100% !important;
-    }
-    .gallery-right{
-        width: 100% !important;
-    }
-    .modal .modal-content {
-        width: 85% !important;
-    }
-    .alert-box > .alert {
-        width: 95% !important;
-    }
-}
-
-
-/* card columns */
-.c-row {
-    padding: 0 0 10px 0;
-    width: 100%;
-}
-.c-row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-.c-column {
-    width: 25%;
-    /* width: calc(25% - 10px); */
-    float: left;
-    /* border: 1px solid #ccc; */
-
-
-    outline: 1px solid #EEE;
-    outline-offset: -2px;
-
-    padding: 10px 0;
-    text-align: center;
-    height: 280px;
-    position: relative;
-}
-.c-column:hover {
-    outline: 1px solid #209cee;
-}
-
-.c-column > img {
-    width: 150px;
-}
-.c-column > button:first-of-type{
-
-}
-.c-column > button:last-of-type{
-
-}
-.c-column .c-price{
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-}
-.c-column .c-button{
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-}
-.c-column .c-button a{
-    padding-left: 20%;
-    padding-right: 20%;
-}
-
 /* nav */
 nav {
     width: 100%;
@@ -275,43 +152,11 @@ nav {
     left: 0;
     right: 0;
 }
-
-.n-one{
-    float: left;
-    width: 30%;
-}
-.n-two{
-    float: left;
-    width: 50%;
-}
-.n-three{
-    float: right;
-    width: 20%;
-    text-align: right;
-}
-
-.n-label{
-    margin-right: 10px;
-}
-
-.n-row-one{
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
-}
-.n-row-two{
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
-}
 .clearfix{
     content: '';
     clear: both;
     display: table;
 }
-/*button {
-    font: normal;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}*/
-
 /* button */
 [class^="btn-"]{
     border: #ccc 1px solid;
@@ -348,7 +193,6 @@ a[class^="btn-"]{
 .btn-danger{
     background-color: #ff3860;
 }
-
 /* button outline */
 .btn-outline{
     background-color: transparent;
@@ -382,7 +226,6 @@ a[class^="btn-"]{
     border-color: #ff3860;
     color: #ff3860;
 }
-
 /* input */
 input[type=text].input, input[type=email].input, input[type=password].input, input[type=date].input, input[type="time"].input, select.input, textarea.input{
     width: 100%;
@@ -392,51 +235,19 @@ input[type=text].input, input[type=email].input, input[type=password].input, inp
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-/*
-input[type=checkbox].input, input[type=radio].input{
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1.25;
-  padding: 10px 5px;
-  }*/
-
-
+ul.breadcrumb {
+    padding: 10px 5px;
+    margin: 10px 0;
+    background-color: #eee; 
+    border-radius: .25rem;
+}
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 6px;
+    color: black;
+    content: "/\00a0";
+}
 /* group */
-/* thanks : https://philipwalton.github.io/solved-by-flexbox/demos/input-add-ons/ */
-/*
-.group {
-  display: flex;
-  margin-bottom: 8px;
-}
-.group-field:first-child,
-.group-item:first-child {
-  border-radius: 2px 0 0 2px;
-}
-.group-field,
-.group-item {
-  border: 1px solid rgba(147, 128, 108, 0.25);
-  padding: 0.5em 0.75em;
-}
-.group-item {
-  background-color: rgba(147, 128, 108, 0.1);
-  color: #666666;
-  font: inherit;
-  font-weight: normal;
-}
-.group-field {
-  flex: 1;
-}
-.group-field:not(:first-child) {
-  border-left: 0;
-}
-.group-field:not(:last-child) {
-  border-right: 0;
-}
-.group-field:last-child,
-.group-item:last-child, .group > :last-child {
-  border-radius: 0 2px 2px 0;
-}
-*/
 .group{
     display: table;
     border-collapse: collapse;
@@ -452,7 +263,6 @@ input[type=checkbox].input, input[type=radio].input{
     color: #777;
     padding: 0 8px
 }
-
 .group-field{
     width:100%;
 }
@@ -462,23 +272,6 @@ input[type=checkbox].input, input[type=radio].input{
     width: 100%;
     padding: 8px;
 }
-
-/* card */
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 40%;
-}
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-.card-content {
-    padding: 2px 16px;
-}
-.card-footer{
-
-}
-
 /* dropimage */
 .dropimage {
     position: relative;
@@ -658,21 +451,20 @@ input[type=checkbox].input, input[type=radio].input{
     font-weight: bold;
 }
 
-
+.response {
+    overflow-x: auto;
+}
+.table-response {
+    overflow-x: auto;
+}
 table.table {
     width: 100%;
     text-align: center;
     border-collapse: collapse;
 }
-
 .table tr:nth-child(even) {
     background-color: #f2f2f2
 }
-
-.table-response {
-    overflow-x: auto;
-}
-
 .table tr:hover td{
     background-color: #ddd !important;
 }
@@ -682,7 +474,6 @@ table.table {
 .table th, .table td{
     padding: 8px 0;
 }
-
 
 /* The Modal (background) */
 .modal {
@@ -707,9 +498,7 @@ table.table {
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
 }
-
 /* Modal Content */
-
 .modal .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -718,9 +507,7 @@ table.table {
     border: 0;
     border-radius: 3px;
 }
-
 /* The Close Button */
-
 .modal .close {
     color: #CCC;
     float: right;
@@ -728,40 +515,28 @@ table.table {
     font-weight: bold;
     margin: -5px 5px 0 30px;
 }
-
 .modal .close:hover,
 .modal .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-
 .modal .modal-header {
     padding: 10px 0;
     border-bottom: 1px solid #e9ecef;
 }
-
 .modal .modal-body {
     /* padding: 2px 16px; */
     padding: 10px 0;
 }
-
 .modal .modal-footer {
     margin-top: 15px;
     padding: 15px 0 10px 0;
     /*    border-top: 1px solid #e9ecef;*/
 }
-
 .pull-right{
     float: right;
 }
-
-/*button.pull-right:before{
-    content: "";
-    clear: both;
-    display: table;
-}*/
-
 .footer {
     width: 100%;
     text-align: center;
@@ -805,9 +580,7 @@ table.table {
 }
 /* ------------------------ end alter ------------------------ */
 
-.response {
-    overflow-x: auto;
-}
+
 
 .box-container {
     width: 100%;
@@ -861,38 +634,8 @@ table.table {
 }
 
 
-/* Style the list */
-ul.breadcrumb {
-    padding: 10px 5px;
-    margin: 10px 0;
-    background-color: #eee; 
-    border-radius: .25rem;
-}
 
-/* Display list items side by side */
-ul.breadcrumb li {
-    /*    display: inline;
-        font-size: 18px;*/
-}
 
-/* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb li+li:before {
-    padding: 6px;
-    color: black;
-    content: "/\00a0";
-}
-
-/* Add a color to all links inside the list */
-ul.breadcrumb li a {
-    color: #0275d8;
-    /*    text-decoration: none;*/
-}
-
-/* Add a color on mouse-over */
-ul.breadcrumb li a:hover {
-    /*       color: #01447e;
-            text-decoration: underline;*/
-}
 
 /*
 article,
@@ -1105,4 +848,62 @@ select {
 .fa-trash{
     color: #ff3860;
     cursor: pointer;
+}
+
+
+/* screen <= 768 For mobile phones */
+@media screen and (max-width: 768px) {
+    body{
+        background-color: #FFE;
+    }
+    .container {
+        width: 95%;
+    }
+    nav.navbar {
+        display: none;
+    }
+    nav.navbar-smartphone {
+        display: block;
+    }
+    .n-row-one .n-one {
+        width: 40% !important;
+    }
+    .n-row-one .n-two {
+        width: 60% !important;
+        text-align: right !important;
+    }
+    .n-row-two .n-one {
+        width: 90% !important;
+    }
+    .n-row-two .n-two {
+        width: 10% !important;
+        text-align: right !important;
+    }
+    .column {
+        width: 50% !important;
+    }
+    .c-column {
+        width: 50% !important;
+    }
+    .carousel{
+        white-space: nowrap;
+    }
+    .carousel-col{
+        width: 120px !important;
+    }
+    .carousel-col img{
+        width: 48px !important;
+    }
+    .gallery-left{
+        width: 100% !important;
+    }
+    .gallery-right{
+        width: 100% !important;
+    }
+    .modal .modal-content {
+        width: 85% !important;
+    }
+    .alert-box > .alert {
+        width: 95% !important;
+    }
 }
