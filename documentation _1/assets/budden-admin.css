@@ -63,7 +63,7 @@ ul.navbar-right > li > a:hover {
 .sidebar * {
     /*    border: 1px greenyellow solid;*/
 }
-/*
+
 .sidebar > ul > li{
     display: block;
     line-height: 2;
@@ -79,7 +79,7 @@ ul.navbar-right > li > a:hover {
 
 .sidebar > ul > li > a:hover {
 
-}*/
+}
 
 
 
@@ -98,7 +98,7 @@ ul.navbar-right > li > a:hover {
     text-align: left;
     padding: 0 0 0 10px;
 }*/
-/*
+
 .sidebar-dropdown{
     margin: 0 12px;
     border-radius: .25rem;
@@ -135,7 +135,6 @@ ul.navbar-right > li > a:hover {
     position: relative;
     margin-right: 15px;
 }
-*/
 
 
 
