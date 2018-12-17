@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px greenyellow solid;
+    border: 1px greenyellow solid;  
 }
 body {
     font-size: 14px;
@@ -29,7 +29,6 @@ hr {
 a {
     text-decoration: none;
     color: #2196F3;
-    display: inline-block;
 }
 a:hover {
     text-decoration: underline;
@@ -81,7 +80,7 @@ ul.inline > li {
     margin: 0;
 }
 .navbar a:hover, .dropdown:hover .dropbtn {
-    /*    background-color: red;*/
+    background-color: red;
 }
 .dropdown-content {
     display: none;
@@ -114,7 +113,6 @@ ul.inline > li {
 .navbar-white{
     background-color: white;
 }
-
 .navbar-lv-1{
     padding: 6px 0;
     height: 40px;
@@ -159,11 +157,7 @@ ul.inline > li {
     display: block;
 }
 .content{
-    /*    margin: 80px 20px 0 220px;*/
-    position: absolute;
-    top: 50px;
-    left: 210px;
-    width: calc(100% - 220px)
+    margin: 80px 20px 0 220px;
 }
 .sidebar > ul > li{
     display: block;
@@ -183,7 +177,7 @@ ul.inline > li {
 }
 
 .sidebar-dropdown{
-    margin: 0 0 0 12px;
+    margin: 0 12px;
     border-radius: .25rem;
     background-color: #343a40;
     display: none;
@@ -967,115 +961,60 @@ table.table {
     cursor: pointer;
 }
 
-.show-case{
-    border: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-left: 10px;
-    width: 24%;
-}
-.show-case:hover{
-    outline: 1px solid #209cee;
-    border: 1px solid #209cee;
-}
-.show-case img{
-    width: 100%;
-}
-.show-case a{
-    width: 100%;
-}
-
-.toggle-popup-cart{
-    float: right;
-}
-.dropdown-content-cart{
-    position: fixed;
-}
-.dropdown-content-cart a{
-    display: none;
-}
-
-.toggle-popup-cart:hover .dropdown-content-cart a{
-    display: block;
-}
 
 /* screen <= 768 For mobile phones */
 @media screen and (max-width: 768px) {
     body{
-        font-size: 12px;
         background-color: #FFE;
     }
     .container {
         width: 95%;
     }
-    .sidebar.side-show{
-        width: 100px;
+    nav.navbar {
+        display: none;
     }
-    .content{
-        left: 100px;
-        width: calc(100% - 100px)
+    nav.navbar-smartphone {
+        display: block;
     }
-    [class*="col-"] {
-        float: left;
-        padding: 0;
+    .n-row-one .n-one {
+        width: 40% !important;
     }
-    .col-sm-1 {width: 8.33%;}
-    .col-sm-2 {width: 16.66%;}
-    .col-sm-3 {width: 25%;}
-    .col-sm-4 {width: 33.33%;}
-    .col-sm-5 {width: 41.66%;}
-    .col-sm-6 {width: 50%;}
-    .col-sm-7 {width: 58.33%;}
-    .col-sm-8 {width: 66.66%;}
-    .col-sm-9 {width: 75%;}
-    .col-sm-10 {width: 83.33%;}
-    .col-sm-11 {width: 91.66%;}
-    .col-sm-12 {width: 100%;}
-
-    /*    nav.navbar {
-            display: none;
-        }
-        nav.navbar-smartphone {
-            display: block;
-        }
-        .n-row-one .n-one {
-            width: 40% !important;
-        }
-        .n-row-one .n-two {
-            width: 60% !important;
-            text-align: right !important;
-        }
-        .n-row-two .n-one {
-            width: 90% !important;
-        }
-        .n-row-two .n-two {
-            width: 10% !important;
-            text-align: right !important;
-        }
-        .column {
-            width: 50% !important;
-        }
-        .c-column {
-            width: 50% !important;
-        }
-        .carousel{
-            white-space: nowrap;
-        }
-        .carousel-col{
-            width: 120px !important;
-        }
-        .carousel-col img{
-            width: 48px !important;
-        }
-        .gallery-left{
-            width: 100% !important;
-        }
-        .gallery-right{
-            width: 100% !important;
-        }
-        .modal .modal-content {
-            width: 85% !important;
-        }
-        .alert-box > .alert {
-            width: 95% !important;
-        }*/
+    .n-row-one .n-two {
+        width: 60% !important;
+        text-align: right !important;
+    }
+    .n-row-two .n-one {
+        width: 90% !important;
+    }
+    .n-row-two .n-two {
+        width: 10% !important;
+        text-align: right !important;
+    }
+    .column {
+        width: 50% !important;
+    }
+    .c-column {
+        width: 50% !important;
+    }
+    .carousel{
+        white-space: nowrap;
+    }
+    .carousel-col{
+        width: 120px !important;
+    }
+    .carousel-col img{
+        width: 48px !important;
+    }
+    .gallery-left{
+        width: 100% !important;
+    }
+    .gallery-right{
+        width: 100% !important;
+    }
+    .modal .modal-content {
+        width: 85% !important;
+    }
+    .alert-box > .alert {
+        width: 95% !important;
+    }
 }
