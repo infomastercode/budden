@@ -25,23 +25,16 @@ for (var i = 0; i < menu.length; i++) {
 }
 
 /* drop image */
-//document.addEventListener("DOMContentLoaded", function () {
-//    [].forEach.call(document.querySelectorAll('.dropimage'), function (img) {
-//        img.onchange = function (e) {
-//            var inputfile = this, reader = new FileReader();
-//            reader.onloadend = function () {
-//                inputfile.style['background-image'] = 'url(' + reader.result + ')';
-//            }
-//            reader.readAsDataURL(e.target.files[0]);
-//        }
-//    });
-//});
-$(".dropimage").on('change', function (e) {
-    var inputfile = this, reader = new FileReader();
-    reader.onloadend = function () {
-        inputfile.style['background-image'] = 'url(' + reader.result + ')';
-    }
-    reader.readAsDataURL(e.target.files[0]);
+document.addEventListener("DOMContentLoaded", function () {
+    [].forEach.call(document.querySelectorAll('.dropimage'), function (img) {
+        img.onchange = function (e) {
+            var inputfile = this, reader = new FileReader();
+            reader.onloadend = function () {
+                inputfile.style['background-image'] = 'url(' + reader.result + ')';
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    });
 });
 
 /* modal */
@@ -57,131 +50,9 @@ $("span.close").on('click', function () {
     $(target).css("display", "none");
 });
 
-/* close alert */
-$(".close-alert").on('click', function () {
-    var target = $(this).closest('.alert')[0];
-    $(target).css("visibility", "hidden"); /* The element is hidden (but still takes up space) */
-    $(target).css("transition", "0.5s");
-});
-
-/* collapse */
-$(".collapse-btn").on('click', function () {
-    this.classList.toggle("collapse-active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-    } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-    }
-});
-//var coll = document.getElementsByClassName("collapse-btn");
-//var i;
-//for (i = 0; i < coll.length; i++) {
-//    coll[i].addEventListener("click", function () {
-//        this.classList.toggle("collapse-active");
-//        var content = this.nextElementSibling;
-//        if (content.style.maxHeight) {
-//            content.style.maxHeight = null;
-//        } else {
-//            content.style.maxHeight = content.scrollHeight + "px";
-//        }
-//    });
-//}
-function set_collapse_max(self) { /* when (add element) inside (collapse) : onclick="javascript:set_collapse_max(this)" */
-    $(self).closest('.collapse-content').css("max-height", "1000px");
-}
-
-/* clone element : button => data-toggle="clone" data-parent="#temp_attribute" data-target="#texture_attribute"  */
-var a = $('[data-toggle="clone"]');
-for (var i = 0; i < a.length; i++) {
-    $(a[i]).on('click', function () {
-        var parent = $(this).attr('data-parent');
-        var target = $(this).attr('data-target');
-        var clone = $(parent).children().clone(true); /* true = withDataAndEvents */
-        $(target).append(clone);
-
-        var length = (1 * $(target).children().length);
-        clone.find("input[name], select[name], textarea[name]").each(function () {
-            if (isset(this.name)) {
-                this.name = this.name.replace(/\[NEW_ID\]/g, '[' + (length) + ']');
-                this.disabled = '';
-            }
-        });
-    });
-}
-/* clone element level 1 & level 2 */
-var a = $('[data-toggle="clone-level-1"]');
-for (var i = 0; i < a.length; i++) {
-    $(a[i]).on('click', function () {
-        var parent = $(this).attr('data-parent');
-        var target = $(this).attr('data-target');
-        var clone = $(parent).children().clone(true);
-        $(target).append(clone);
-
-        // var level = clone.attr('data-level-1');
-        /* NEW_ID_1 */
-        var length = (1 * $(target).children().length);
-        clone.attr('data-level-1', length);
-
-        clone.find("[data-toggle], div[id^='temp_'], div[id^='texture_']").each(function () {
-            if (!isnull(this.getAttribute('data-toggle'))) {
-                this.setAttribute('data-parent', "{0}_{1}".format(this.getAttribute('data-parent'), length));
-                this.setAttribute('data-target', "{0}_{1}".format(this.getAttribute('data-target'), length));
-            } else if (!isnull(this.getAttribute('id'))) {
-                this.setAttribute('id', "{0}_{1}".format(this.getAttribute('id'), length));
-            }
-        });
-        clone.find("input[name], select[name], textarea[name]").each(function () {
-            this.name = this.name.replace(/\[NEW_ID_1\]/, '[' + (length) + ']');
-            if (isnull(this.name.match(/\[NEW_ID_2\]/))) {
-                this.disabled = '';
-            }
-        });
-    });
-}
-var a = $('[data-toggle="clone-level-2"]');
-for (var i = 0; i < a.length; i++) {
-    $(a[i]).on('click', function () {
-        var parent = $(this).attr('data-parent');
-        var target = $(this).attr('data-target');
-        var clone = $(parent).children().clone(true);
-        $(target).append(clone);
-
-        /* NEW_ID_2 */
-        var length = (1 * $(target).children().length);
-        clone.attr('data-level-2', length);
-
-        clone.find("input[name], select[name], textarea[name]").each(function () {
-            this.name = this.name.replace(/\[NEW_ID_2\]/, '[' + (length) + ']');
-            this.disabled = '';
-        });
-    });
-}
-
 $("img.gallery-change").on('click', function () {
     $(".gallery-medium > img").attr('src', this.src);
 });
-
-/* ------------------------- format : "{0}_{1}".format(var1, var2) ------------------------- */
-if (!String.prototype.format) {
-    String.prototype.format = function () {
-        var args = arguments;
-        return this.replace(/{(\d+)}/g, function (match, number) {
-            return typeof args[number] != 'undefined'
-                    ? args[number]
-                    : match
-                    ;
-        });
-    };
-}
-
-function empty(str) {
-    return !(typeof str === 'string' && str.length > 0)
-}
-
-function isnull(str) {
-    return typeof str === 'object' && str === null;
-}
 
 /* ------------------------- start input quantity ------------------------- */
 function getInputQuantity() {
@@ -214,12 +85,13 @@ $(".qty-btn-down").on('click', function () {
 
 /* -------------------------------------------------------- validate ----------------------------------------------------------------------------------- */
 function validateMessage() {
-    this.app_invalid = document.querySelectorAll('small[data-invalid]');
+    this.app_invalid = document.querySelectorAll('p[app-invalid]');
     this.length = this.app_invalid.length;
+
     this.setMessage = function (name, message) {
         for (var i = 0; i < this.length; i++) {
             var tag = this.app_invalid[i];
-            if (name == tag.getAttribute('data-invalid')) { /* firstname*/
+            if (name == tag.getAttribute('app-invalid')) { /* firstname*/
                 tag.innerHTML = message;
                 tag.removeAttribute('hidden');
             }
@@ -236,6 +108,7 @@ function validateMessage() {
         }
     }
 }
+
 function validateForm(form_id, validate) {
     var is_vaild = true;
     var m = new validateMessage();
@@ -366,6 +239,7 @@ function isset(data) {
     }
     return true;
 }
+
 function validateDetail(data, validate) {
 
     var is_vaild = true;
@@ -464,33 +338,6 @@ function save_selector(form_id, type, url) {
         button_value.remove();
     }
 }
-
-/* test save */
-//var validate = {
-//    name: {required: true},
-//    last_name: {required: true},
-//    email: {required: true, email: true},
-//    password: {required: true},
-//    confirm_new_password: {required: true, match: 'password'},
-//    email: {required: true, email: true},
-//    password: {required: true, minlength: 6},
-//    confirm_password: {required: true, minlength: 6, match: 'password'},
-//    phone: {required: true, minlength: 6}
-//};
-//var validate = {
-//    vendor_id: {required: true},
-//    vendor_delivery_id: {required: true},
-//    store_id: {required: true},
-//    store_delivery_id: {required: true},
-//    detail: {required: true, table: 'tbl_master_detail'}
-//};
-//function savetion(form_id, type) {
-//    var valid = validateForm(form_id, validate);
-//    console.log(valid);
-//    if (valid) {
-//        save_selector(form_id, type);
-//    }
-//}
 
 /* -------------------------------------------------------- ajax ----------------------------------------------------------------------------------- */
 /* .done() , .fail(), .always(), .then() */

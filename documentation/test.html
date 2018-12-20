@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TEST</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/budden.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+  </head>
+  <body>
+
+
+    <div class="form-group">
+      <div class="col-12">
+        <button type="button" class="btn-primary" data-toggle="clone-level-1" data-parent="#temp_parent" data-target="#texture_target">add combination</button>
+
+        <div id="temp_parent" style="display: none;" >
+
+          <div class="form-group" data-level-1="-1">
+            <label>name</label>
+            <input type="text" name="name[NEW_ID_1]" class="input">
+            <input type="text" name="age[NEW_ID_1]" class="input">
+            <button type="button" class="btn-primary" data-toggle="clone-level-2" data-parent="#temp_attr" data-target="#texture_attr">add attribute</button>
+            <br>
+            <div id="temp_attr" style="display: none;" data-level-2="-1">
+              <div class="form-group">
+                <div class="col-6">
+                  <label class="bold text-right">attribute name</label>
+                  <input type="text" name="combination[NEW_ID_1][attribute][NEW_ID_2][name]" class="input" disabled>
+                </div>
+                <div class="col-6">
+                  <label class="bold text-right">attribute value</label>
+                  <input type="text" name="combination[NEW_ID_1][attribute][NEW_ID_2][value]" class="input" disabled>
+                </div>
+              </div>
+            </div>
+            <div id="texture_attr">
+            </div>
+          </div>
+
+        </div>
+
+        <div id="texture_target">
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div style="margin-bottom: 500px"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="assets/budden.js"></script>
+
+  </body>
+
+</html>

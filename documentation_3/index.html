@@ -12,63 +12,28 @@
     <h2 id="button">Buttons</h2>
     <div>
       <button class="btn-default">default</button>
-      <button class="btn-primary">primary</button>
-      <button class="btn-link">link</button>
-      <button class="btn-info">info</button>
-      <button class="btn-success">success</button>
-      <button class="btn-warning">warning</button>
-      <button class="btn-danger">danger</button>
+      <button class="btn-primary">default</button>
+      <button class="btn-link">default</button>
+      <button class="btn-info">default</button>
+      <button class="btn-success">default</button>
+      <button class="btn-warning">default</button>
+      <button class="btn-danger">default</button>
     </div>
     <br>
     <div>
       <button class="btn-default btn-outline">default</button>
-      <button class="btn-primary btn-outline">primary</button>
-      <button class="btn-link btn-outline">link</button>
-      <button class="btn-info btn-outline">info</button>
-      <button class="btn-success btn-outline">success</button>
-      <button class="btn-warning btn-outline">warning</button>
-      <button class="btn-danger btn-outline">danger</button>
+      <button class="btn-primary btn-outline">default</button>
+      <button class="btn-link btn-outline">default</button>
+      <button class="btn-info btn-outline">default</button>
+      <button class="btn-success btn-outline">default</button>
+      <button class="btn-warning btn-outline">default</button>
+      <button class="btn-danger btn-outline">default</button>
     </div>
     <br>
     <div>
       <a href="" class="btn-default btn-outline">default</a>
       <a href="" class="btn-primary btn-outline">default</a>
     </div>
-    <br>
-    <div>
-      <button class="btn-info btn-sm">info sm</button>
-      <button class="btn-primary btn-sm">pri sm</button>
-    </div>
-
-    <hr>
-
-    <h2 id="icon">Icon</h2>
-    <span><i class="fas fa-plus"></i> add</span>
-    <span><i class="fas fa-reply"></i> cancel</span>
-    <span><i class="far fa-save"></i> save far</span>
-    <span><i class="fas fa-save"></i> save fas</span>
-    <span><i class="far fa-trash-alt"></i> delete</span>
-    <span><i class="fas fa-eraser"></i> eraser</span>
-    <span><i class="far fa-edit"></i> edit far</span>
-    <span><i class="fas fa-edit"></i> edit fas</span>
-    <span><i class="fas fa-rocket"></i> confirm</span>
-    <span><i class="fas fa-print"></i> print</span>
-    <span><i class="fas fa-tasks"></i> task</span>
-    <span><i class="fas fa-download"></i> download</span>
-    <br>
-    <span><i class="fas fa-angle-left"></i> angle left</span>
-    <span><i class="fas fa-angle-right"></i> angle right</span>
-    <span><i class="fas fa-angle-up"></i> angle up</span>
-    <span><i class="fas fa-angle-down"></i> angle down</span>
-    <span><i class="fas fa-ban"></i> ban</span>
-    <span><i class="far fa-bell"></i> bell</span>
-    <span><i class="far fa-bell-slash"></i> bell slash</span>
-    <span><i class="far fa-circle"></i> circle</span>
-    <span><i class="far fa-clone"></i> clone</span>
-    <span><i class="far fa-envelope"></i> envelope</span>
-    <span><i class="fab fa-envira"></i> envira</span>
-    <span><i class="far fa-folder-open"></i> folder</span>
-    <span><i class="fas fa-search"></i> search</span>
 
     <hr>
 
@@ -457,50 +422,24 @@
 
     <br>
 
-    <h2 id="form_group">Form Group In Many In line</h2>
-    <div>
-      <div class="content-xx">
-        <div class="row">
-          <div class="col-3">
-            <label class="bold">dimension</label>
-            <input type="text" name="dimension" value="" class="input">
-          </div>
-          <div class="col-3">
-            <label class="bold">dimension</label>
-            <input type="text" name="dimension" value="" class="input">
-          </div>
-          <div class="col-3">
-            <label class="bold">dimension</label>
-            <input type="text" name="dimension" value="" class="input">
-          </div>
-          <div class="col-3">
-            <label class="bold">dimension</label>
-            <input type="text" name="dimension" value="" class="input">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <br>
-
     <h2 id="alert">Alert</h2>
     <div>
-      <div style="position: static;">
+      <div class="alert-box" style="position: static;">
         <div class="alert danger" style="display: block;" >
+          <span class="closebtn">&times;</span>  
           <strong>Danger!</strong> <span class="message">error</span>
-          <span class="close-alert">&times;</span>
         </div>
         <div class="alert success" style="display: block;" >
+          <span class="closebtn">&times;</span>  
           <strong>Success!</strong> <span class="message">success</span>
-          <span class="close-alert">&times;</span>
         </div>
         <div class="alert info" style="display: block;" >
+          <span class="closebtn">&times;</span>  
           <strong>Info!</strong> <span class="message">info</span>
-          <span class="close-alert">&times;</span>
         </div>
         <div class="alert warning" style="display: block;" >
+          <span class="closebtn">&times;</span>  
           <strong>Warning!</strong> <span class="message">warning</span>
-          <span class="close-alert">&times;</span>
         </div>
       </div>
     </div>
@@ -572,121 +511,6 @@
       <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
       <input type="number" name="quantity" value="1" min="0" max="10">
       <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-    </div>
-
-    <br>
-    <h2 id="collapse">collapse</h2>
-    <div>
-      <div class="collapse">
-        <button type="button" class="collapse-btn">Open Section 1</button>
-        <div class="collapse-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-      </div>
-
-      <div class="collapse">
-        <button type="button" class="collapse-btn">Open Section 2</button>
-        <div class="collapse-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-      </div>
-
-      <div class="collapse">
-        <button type="button" class="collapse-btn">Open Section 3</button>
-        <div class="collapse-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="collapse">
-      <button type="button" class="collapse-btn">Open form</button>
-      <div class="collapse-content">
-        <div class="content-xx">
-          <div class="row">
-            <div class="form-group">
-              <div class="col-12">
-                <label class="bold text-right">name</label>
-                <input type="text" name="name" value="" class="input">
-                <small data-invalid="name" hidden></small>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-12">
-                <label class="bold text-right">last name</label>
-                <input type="text" name="last_name" value="" class="input">
-                <small data-invalid="last_name" hidden></small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <br>
-    <hr>
-    <h2 id="clone_element">clone once element</h2>
-    <div>
-      <button type="button" data-toggle="clone" data-parent="#temp_attribute" data-target="#texture_attribute" class="btn-primary">add element</button>
-      <div id="temp_attribute" style="display: none;">
-        <!-- clone this -->
-        <div class="form-group">
-          <div class="col-6">
-            <label class="bold text-right">attribute name</label>
-            <input type="text" name="attr[NEW_ID][name]" class="input" disabled>
-          </div>
-          <div class="col-6">
-            <label class="bold text-right">attribute value</label>
-            <input type="text" name="attr[NEW_ID][value]" class="input" disabled>
-          </div>
-        </div>
-      </div>
-      <div id="texture_attribute">
-        <!-- add this -->
-      </div>
-    </div>
-
-    <br>
-    <hr>
-
-    <h2 id="clone_element_inside_element">clone level 1 & level 2 element</h2>
-    <div>
-      <div class="form-group">
-        <div class="col-12">
-          <button type="button" class="btn-primary" data-toggle="clone-level-1" data-parent="#temp_parent" data-target="#texture_target">add combination</button>
-          <div id="temp_parent" style="display: none;" >
-            <!-- clone this -->
-            <div class="form-group" data-level-1="-1">
-              <label>name</label>
-              <input type="text" name="name[NEW_ID_1]" class="input" disabled>
-              <input type="text" name="age[NEW_ID_1]" class="input" disabled>
-              <button type="button" class="btn-primary" data-toggle="clone-level-2" data-parent="#temp_attr" data-target="#texture_attr">add attribute</button>
-              <br>
-              <div id="temp_attr" style="display: none;" data-level-2="-1">
-                <!-- clone this -->
-                <div class="form-group">
-                  <div class="col-6">
-                    <label class="bold text-right">attribute name</label>
-                    <input type="text" name="combination[NEW_ID_1][attribute][NEW_ID_2][name]" class="input" disabled>
-                  </div>
-                  <div class="col-6">
-                    <label class="bold text-right">attribute value</label>
-                    <input type="text" name="combination[NEW_ID_1][attribute][NEW_ID_2][value]" class="input" disabled>
-                  </div>
-                </div>
-              </div>
-              <div id="texture_attr">
-                <!-- add this -->
-              </div>
-            </div>
-          </div>
-          <div id="texture_target">
-            <!-- add this -->
-          </div>
-        </div>
-      </div>
     </div>
 
 
