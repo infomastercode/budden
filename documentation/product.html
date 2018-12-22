@@ -146,9 +146,26 @@
           <div class="color">สี : Blue</div>
           <div class="size">ขนาด : L</div>
           <div class="combination">combination</div>
-          <select id="input_combination" class="input">
-            <option value=6 data-combination='55;Blue;L'>Price : 55 Color : Blue Size : L </option>        <!--  option value="2" data-combination="255;Blue;S">Price : 255 Color : Blue Size : S </option> -->
-          </select>s
+          
+<!--          <select id="input_combination" class="input">
+            <option value=6 data-combination='55;Blue;L'>Price : 55 Color : Blue Size : L </option>          option value="2" data-combination="255;Blue;S">Price : 255 Color : Blue Size : S </option> 
+          </select>-->
+
+          <div style="height: 100px; overflow: auto;">
+            <label class="choosebox">Price : 55 Color : Blue Size : LxxxxxxxxxxxxxxxxxxxxxxxxxxxxLxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              <input type="radio" name="radio" checked="checked">
+              <span class="checkmark radio"></span>
+            </label>
+            <label class="choosebox">Price : 55 Color : Blue Size : L
+              <input type="radio" name="radio" >
+              <span class="checkmark radio"></span>
+            </label>
+            <label class="choosebox">Price : 55 Color : Blue Size : L
+              <input type="radio" name="radio" >
+              <span class="checkmark radio"></span>
+            </label>
+          </div>
+
           <div class="qty">
             <span class="qty-label">price</span>
             <span class="qty-box">
