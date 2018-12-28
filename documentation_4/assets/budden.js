@@ -239,6 +239,8 @@ $(".qty-btn-down").on('click', function () {
 /* ------------------------- end input quantity ------------------------- */
 
 
+
+
 /* -------------------------------------------------------- validate ----------------------------------------------------------------------------------- */
 function validateMessage() {
     this.app_invalid = document.querySelectorAll('small[data-invalid]');
@@ -267,10 +269,13 @@ function validateForm(form_id, validate) {
     var is_vaild = true;
     var m = new validateMessage();
     m.resetMessage();
+
     var formData = document.getElementById(form_id).querySelectorAll('input[name], select[name], textarea[name]');
     var length = formData.length;
+
 //    console.log(formData);
 //    return;
+
     if (isset(validate['detail'])) {
         var rowCount = document.getElementById(validate['detail']['table']).rows.length;
         if (rowCount <= 1) {
@@ -279,10 +284,14 @@ function validateForm(form_id, validate) {
             console.log('detail is required');
         }
     }
+
     for (var i = 0; i < length; i++) {
+
         var d = formData[i].name;
         var v = formData[i].value.trim();
+
         if (isset(validate[d])) {
+
             if (isset(validate[d].required) && validate[d].required === true && v == '') {
                 m.setMessage(d, 'The field is required');
                 is_vaild = false;
@@ -290,30 +299,35 @@ function validateForm(form_id, validate) {
                 continue;
 
             }
+
             if (isset(validate[d].numeric) && validate[d].numeric === true && v != '' && !isNumber(v)) {
                 m.setMessage(d, 'The field should be numeric');
                 is_vaild = false;
                 continue;
                 //console.log('in vaid numeric');
             }
+
             if (isset(validate[d].minlength) && v.length < validate[d].minlength) {
                 m.setMessage(d, 'The field is minlength ' + validate[d].minlength + ' character');
                 is_vaild = false;
                 continue;
                 //console.log('in vaid minlength');
             }
+
             if (isset(validate[d].maxlength) && v.length > validate[d].maxlength) {
                 m.setMessage(d, 'The field is maxlength ' + validate[d].maxlength + ' character');
                 is_vaild = false;
                 continue;
                 //console.log('in vaid maxlength');
             }
+
             if (isset(validate[d].email) && validate[d].email === true && v !== '' && !validateEmail(v)) {
                 m.setMessage(d, 'The field should be email');
                 is_vaild = false;
                 continue;
                 //console.log('in vaid email');
             }
+
             if (isset(validate[d].min)) {
                 if (isNumber(v)) {
                     if (v < validate[d].min) {
@@ -329,6 +343,7 @@ function validateForm(form_id, validate) {
                     //console.log('can not process in vaid min');
                 }
             }
+
             if (isset(validate[d].max)) {
                 if (isNumber(v)) {
                     if (v > validate[d].max) {
@@ -344,6 +359,7 @@ function validateForm(form_id, validate) {
                     //console.log('can not process in vaid max');
                 }
             }
+
             if (isset(validate[d].match)) {
                 var match = validate[d].match;
                 var value_match = document.getElementById(form_id).querySelectorAll('input[name=' + match + '], select[name=' + match + ']')[0].value.trim();
@@ -360,15 +376,19 @@ function validateForm(form_id, validate) {
     }
     console.log('is valid : ' + is_vaild);
     return is_vaild;
+    //   return false;
 }
+
 function validateEmail(email) {
     /* true is email , false is not email */
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
+
 function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
+
 function isset(data) {
     if (typeof data === 'undefined') {
         return false;
@@ -376,43 +396,53 @@ function isset(data) {
     return true;
 }
 function validateDetail(data, validate) {
+
     var is_vaild = true;
     var m = new validateMessage();
     m.resetMessage();
+
     for (var key in data) {
+
         if (isset(validate[key])) {
+
             var v = data[key];
             // console.log(validate[key]);
+
             if (isset(validate[key].required) && validate[key].required === true && v == '') {
                 m.setMessage(key, 'The field is required');
                 is_vaild = false;
                 continue;
                 //console.log('This field is required ' + d);
             }
+
             if (isset(validate[key].numeric) && validate[key].numeric === true && v != '' && !isNumber(v)) {
                 m.setMessage(key, 'The field should be numeric');
                 is_vaild = false;
                 continue;
                 //console.log('in vaid numeric');
             }
+
             if (isset(validate[key].minlength) && v.length < validate[d].minlength) {
                 m.setMessage(key, 'The field is minlength ' + validate[d].minlength + ' character');
                 is_vaild = false;
                 continue;
                 //console.log('in vaid minlength');
             }
+
             if (isset(validate[key].maxlength) && v.length > validate[d].maxlength) {
                 m.setMessage(key, 'The field is maxlength ' + validate[d].maxlength + ' character');
                 is_vaild = false;
                 continue;
                 //console.log('in vaid maxlength');
             }
+
             if (isset(validate[key].email) && validate[key].email === true && v !== '' && !validateEmail(v)) {
                 m.setMessage(key, 'The field should be email');
                 is_vaild = false;
                 continue;
                 //console.log('in vaid email');
             }
+
             if (isset(validate[key].min)) {
                 if (isNumber(v)) {
                     if (v < validate[key].min) {
@@ -428,6 +458,7 @@ function validateDetail(data, validate) {
                     //console.log('can not process in vaid min');
                 }
             }
+
             if (isset(validate[key].max)) {
                 if (isNumber(v)) {
                     if (v > validate[key].max) {
@@ -474,6 +505,7 @@ var vaildate_delete = function (selected_count) {
         return true;
     }
 }
+
 var delete_selector = function (form_id, link) {
     $("#" + form_id).attr('action', link).submit();
 }
@@ -531,106 +563,4 @@ function ajax_action(type, url, data, datatype) {
         data: data,
         dataType: datatype,
     });
-}
-
-/* -------------------------------------------------------- cookie ----------------------------------------------------------------------------------- */
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-function deleteCookie(cname) {
-    var cvalue = "";
-    var d = new Date();
-    d.setTime(d.getTime() - (1000 * 60 * 60 * 24)); //Set the time to the past. 1000 milliseonds = 1 second
-    var expires = "expires=" + d.toUTCString(); //Compose the expirartion date
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"; //Set the cookie with name and the expiration date
-}
-/* -------------------------------------------------------- cart ----------------------------------------------------------------------------------- */
-var cookieProduct = {
-    setProduct: function (product) {
-        setCookie('products', JSON.stringify(product), 3);
-    },
-    getProduct: function () {
-        var products = getCookie('products');
-        if (products != '') {
-            return JSON.parse(products);
-        }
-        return '';
-    },
-    deleteProduct: function () {
-        deleteCookie('products');
-    }
-}
-function count_cart() {
-    var myProduct = cookieProduct.getProduct();
-    var cart_price = 0;
-    var count_cart = myProduct.length;
-    if (count_cart > 0) {
-        for (var index in myProduct) {
-            var p = parseInt(myProduct[index].price);
-            var q = parseInt(myProduct[index].quantity);
-            cart_price = cart_price + (p * q);
-        }
-    }
-//    $("#cart_count_1").html(count_cart);
-//    $("#cart_count_2").html(count_cart);
-//    $("#cart_price").html(cart_price);
-    console.log(count_cart, cart_price);
-}
-count_cart();
-function delete_cart($obj) {
-    var myData = new Array();
-    var $tr = $obj.parents('tr');
-    var id_product_combination = $tr.attr('id_product_combination');
-    var myProduct = cookieProduct.getProduct();
-    for (var index in myProduct) {
-        if (myProduct[index].id_combination != id_product_combination) {
-            myData.push({id_combination: myProduct[index].id_combination, quantity: myProduct[index].quantity, price: myProduct[index].price});
-        }
-    }
-    $tr.remove();
-    cookieProduct.setProduct(myData);
-    count_cart();
-    view_total_2();
-}
-function add_cart() {
-    var myData = new Array();
-    var id_combination = 4; //$("#input_combination").val();
-    var quantity = 9; //$("#input_quantity").val();
-    var price = 50; //$("#input_price").html();
-    var myProduct = cookieProduct.getProduct();
-    var is_d = false;
-    for (var index in myProduct) {
-        if (myProduct[index].id_combination == id_combination) {
-            myData.push({id_combination: id_combination, quantity: quantity, price: price});
-            is_d = true;
-            continue;
-        }
-        if (isset(myProduct[index].id_combination))
-            myData.push({id_combination: myProduct[index].id_combination, quantity: myProduct[index].quantity, price: myProduct[index].price});
-    }
-    if (!is_d) {
-        myData.push({id_combination: id_combination, quantity: quantity, price: price});
-    }
-    //console.log(myData);
-    cookieProduct.setProduct(myData);
-    count_cart();
-    alert('success');
-//    message_alert('S', 'success');
 }
