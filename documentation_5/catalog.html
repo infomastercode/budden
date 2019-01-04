@@ -43,16 +43,19 @@
             </form>
           </div>
           <div class="col-2">
-            <a href="javascript:void(0)" data-toggle="display" data-target="#open_cart">
-              <img class="logo" width="40" src="http://ecommerce4.com/application/views/theme/catalog/assets/icon/shopping-cart.png">
-              <span id="cart_count_1">0</span>
-            </a>
-            <div class="dropdown-content-cart" id="open_cart" hidden>
-              <a href="http://ecommerce4.com/cart/view_cart">
-                <div class="text-left">จำนวนรวม <span id="cart_count_2">0</span> รายการ</div>
-                <div class="text-left">ราคารวม <span id="cart_price">0</span> บาท</div>
+
+            <div class="toggle-popup-cart">
+              <a href="javascript:void(0)">
+                <img class="logo" width="40" src="http://ecommerce4.com/application/views/theme/catalog/assets/icon/shopping-cart.png">
+                <span id="cart_count_1">0</span>
               </a>
+              <div class="dropdown-content-cart">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -128,103 +131,141 @@
         </div> 
       </div>
 
-      <!-- content -->
-      <div class="text-title">Product</div>
-      <div class="gallery">
-        <div class="gallery-left">
-          <div class="gallery-medium">
-            <img src="http://ecommerce4.com/application/views/image/default/img/banner.png">
-          </div>
-          <div class="gallery-small">
-            <ul class="inline">
-              <li><img src=http://ecommerce4.com/application/views/image/default/img/img-64-1.png class='gallery-change'></li>
-              <li><img src=http://ecommerce4.com/application/views/image/default/img/img-64-2.png class='gallery-change'></li>
-              <li><img src=http://ecommerce4.com/application/views/image/default/img/img-64-1.png class='gallery-change'></li>
-              <li><img src=http://ecommerce4.com/application/views/image/default/img/img-64-2.png class='gallery-change'></li>
-              <li><img src=http://ecommerce4.com/application/views/image/default/img/img-64-1.png class='gallery-change'></li>
-              <li><img src=http://ecommerce4.com/application/views/image/default/img/img-64-2.png class='gallery-change'></li>
-            </ul>
-            <!--            <a class="gallery-prev" onclick="plusSlides(-1)"><</a>
-                        <a class="gallery-next" onclick="plusSlides(1)">></a>-->
-          </div>
-        </div>
-        <div class="gallery-right">
-          <div class="name"><h3>Product Name 01</h3></div>
-          <div class="price"><span id="input_price">55</span> บาท</div>
-          <div class="price-compare">จากปกติราคา 0 บาท</div>
-          <div class="color">สี : Blue</div>
-          <div class="size">ขนาด : L</div>
-          <div class="combination">combination</div>
 
-          <!--          <select id="input_combination" class="input">
-                      <option value=6 data-combination='55;Blue;L'>Price : 55 Color : Blue Size : L </option>          option value="2" data-combination="255;Blue;S">Price : 255 Color : Blue Size : S </option> 
-                    </select>-->
-
-          <div style="max-height: 300px; overflow: auto;">
-            <label class="choosebox">Price : 55 Color : Blue Size : L
-              <input type="radio" name="radio" checked="checked">
-              <span class="checkmark radio"></span>
-            </label>
-            <label class="choosebox">Price : 55 Color : Blue Size : L
-              <input type="radio" name="radio" >
-              <span class="checkmark radio"></span>
-            </label>
-            <label class="choosebox">Price : 55 Color : Blue Size : L
-              <input type="radio" name="radio" >
-              <span class="checkmark radio"></span>
-            </label>
-          </div>
-
-          <div class="qty-box">
-            <div class="quantity">quantity</div>
-            <div class="number-inline">
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
-              <input type="number" id="input_quantity" value="1" min="1" max="99">
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+      <div class="text-title">Category</div>
+      <div class="response">
+        <div class="box-container">
+          <div class="box-row">
+            <div class = "box-col">
+              <a href="#">
+                <img src = '#'>
+                <p>Hello</p>
+              </a>
+            </div>
+            <div class = "box-col">
+              <a href="#">
+                <img src = '#'>
+                <p>Hello</p>
+              </a>
+            </div>
+            <div class = "box-col">
+              <a href="#">
+                <img src = '#'>
+                <p>Hello</p>
+              </a>
+            </div>
+            <div class = "box-col">
+              <a href="#">
+                <img src = '#'>
+                <p>Hello</p>
+              </a>
+            </div>
+            <div class = "box-col">
+              <a href="#">
+                <img src = '#'>
+                <p>Hello</p>
+              </a>
             </div>
           </div>
 
-          <!--          <div class="qty">
-                      <span class="qty-label">price</span>
-                      <span class="qty-box">
-                        <div class="qty-group">
-                          <input type='number' id="input_quantity" value="1" class="qty-input">
-                          <button type='button' class="qty-btn qty-btn-up"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
-                          <button type='button' class="qty-btn qty-btn-down"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
-                        </div>
-                      </span>
-                      <span class="qty-label">pricexxxxxxxx</span>
-                    </div>-->
+        </div>
+      </div>
 
-          <div class="add-cart">
-            <button class="btn-info btn-outline" onclick="add_cart()">add cart</button>
+
+
+      <div class="text-title">online</div>
+      <div class="row">
+        <div class="col-3 col-sm-6 show-case">
+          <img src = "http://ecommerce4.com/application/views/image/product/IMG_9_1_250x250.png">
+          <div class="text-label text-center">This is a product</div>
+          <div class="text-label text-center">120 B</div>
+          <div class="text-label text-center">
+            <a class = "btn-info btn-outline" href="./product.html">
+              <i class="fas fa-shopping-cart"></i> 
+              view cart
+            </a>
           </div>
         </div>
-        <div class="clearfix"></div>
-      </div>
-
-      <!--      <div style="clear:both;"></div>-->
-      <div class="gallery">
-        <div class="description">
-          This is a description
+        <div class="col-3 col-sm-6 show-case">
+          <img src = "http://ecommerce4.com/application/views/image/product/IMG_9_1_250x250.png">
+          <div class="text-label text-center">This is a product</div>
+          <div class="text-label text-center">120 B</div>
+          <div class="text-label text-center">
+            <a class = "btn-info btn-outline" href="http://ecommerce4.com/home/product/9">
+              <i class="fas fa-shopping-cart"></i> 
+              view cart
+            </a>
+          </div>
+        </div>
+        <div class="col-3 col-sm-6 show-case">
+          <img src = "http://ecommerce4.com/application/views/image/product/IMG_9_1_250x250.png">
+          <div class="text-label text-center">This is a product</div>
+          <div class="text-label text-center">120 B</div>
+          <div class="text-label text-center">
+            <a class = "btn-info btn-outline" href="http://ecommerce4.com/home/product/9">
+              <i class="fas fa-shopping-cart"></i> 
+              view cart
+            </a>
+          </div>
+        </div>
+        <div class="col-3 col-sm-6 show-case">
+          <img src = "http://ecommerce4.com/application/views/image/product/IMG_9_1_250x250.png">
+          <div class="text-label text-center">This is a product</div>
+          <div class="text-label text-center">120 B</div>
+          <div class="text-label text-center">
+            <a class = "btn-info btn-outline" href="http://ecommerce4.com/home/product/9">
+              <i class="fas fa-shopping-cart"></i> 
+              view cart
+            </a>
+          </div>
         </div>
       </div>
-
-
-
-
-      <!--      <div class="row">
-              <div class="col-5">
-                <img src = "http://ecommerce4.com/application/views/image/product/IMG_9_1_250x250.png">
-                <div>
-                  
-                </div>
-              </div>
-              <div class="col-7">
-                <div class="text-label">This is a text label 1 </div>
-                <div class="text-label">This is a text label 2 </div>
-              </div>
-            </div>-->
+      <div class="row">
+        <div class="col-3 col-sm-6 show-case">
+          <img src = "http://ecommerce4.com/application/views/image/product/IMG_9_1_250x250.png">
+          <div class="text-label text-center">This is a product</div>
+          <div class="text-label text-center">120 B</div>
+          <div class="text-label text-center">
+            <a class = "btn-info btn-outline" href="http://ecommerce4.com/home/product/9">
+              <i class="fas fa-shopping-cart"></i> 
+              view cart
+            </a>
+          </div>
+        </div>
+        <div class="col-3 col-sm-6 show-case">
+          <img src = "http://ecommerce4.com/application/views/image/product/IMG_9_1_250x250.png">
+          <div class="text-label text-center">This is a product</div>
+          <div class="text-label text-center">120 B</div>
+          <div class="text-label text-center">
+            <a class = "btn-info btn-outline" href="http://ecommerce4.com/home/product/9">
+              <i class="fas fa-shopping-cart"></i> 
+              view cart
+            </a>
+          </div>
+        </div>
+        <div class="col-3 col-sm-6 show-case">
+          <img src = "http://ecommerce4.com/application/views/image/product/IMG_9_1_250x250.png">
+          <div class="text-label text-center">This is a product</div>
+          <div class="text-label text-center">120 B</div>
+          <div class="text-label text-center">
+            <a class = "btn-info btn-outline" href="http://ecommerce4.com/home/product/9">
+              <i class="fas fa-shopping-cart"></i> 
+              view cart
+            </a>
+          </div>
+        </div>
+        <div class="col-3 col-sm-6 show-case">
+          <img src = "http://ecommerce4.com/application/views/image/product/IMG_9_1_250x250.png">
+          <div class="text-label text-center">This is a product</div>
+          <div class="text-label text-center">120 B</div>
+          <div class="text-label text-center">
+            <a class = "btn-info btn-outline" href="http://ecommerce4.com/home/product/9">
+              <i class="fas fa-shopping-cart"></i> 
+              view cart
+            </a>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -298,7 +339,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="assets/budden.js"></script>
+    <script src="budden.js"></script>
   </body>
 
 </html>
