@@ -24,6 +24,26 @@ for (var i = 0; i < menu.length; i++) {
     menu[i].addEventListener('click', sidebarToggle);
 }
 
+/* on bottom */
+var bottom = document.getElementsByClassName("on-bottom");
+var onBottom = function () {
+    $('html, body').animate({scrollTop: $(document).height()}, 'slow');
+//    var scrollingElement = (document.scrollingElement || document.body);
+//    scrollingElement.scrollTop = scrollingElement.scrollHeight;
+};
+for (var i = 0; i < bottom.length; i++) {
+    bottom[i].addEventListener('click', onBottom);
+}
+
+/* on top */
+var ontop = document.getElementsByClassName("on-top");
+var onTop = function () {
+    $('html, body').animate({scrollTop: 0}, 'slow');
+};
+for (var i = 0; i < ontop.length; i++) {
+    ontop[i].addEventListener('click', onTop);
+}
+
 /* drop image */
 //document.addEventListener("DOMContentLoaded", function () {
 //    [].forEach.call(document.querySelectorAll('.dropimage'), function (img) {
@@ -674,19 +694,23 @@ function count_cart() {
 }
 count_cart();
 function delete_cart($obj) {
-    var myData = new Array();
-    var $tr = $obj.parents('tr');
-    var id_product_combination = $tr.attr('id_product_combination');
-    var myProduct = cookieProduct.getProduct();
-    for (var index in myProduct) {
-        if (myProduct[index].id_combination != id_product_combination) {
-            myData.push({id_combination: myProduct[index].id_combination, quantity: myProduct[index].quantity, price: myProduct[index].price});
+    dialog_confirm('delete').then(function (is_confirm) {
+        if (is_confirm) {
+            var myData = new Array();
+            var $tr = $obj.parents('tr');
+            var id_product_combination = $tr.attr('id_product_combination');
+            var myProduct = cookieProduct.getProduct();
+            for (var index in myProduct) {
+                if (myProduct[index].id_combination != id_product_combination) {
+                    myData.push({id_combination: myProduct[index].id_combination, quantity: myProduct[index].quantity, price: myProduct[index].price});
+                }
+            }
+            $tr.remove();
+            cookieProduct.setProduct(myData);
+            count_cart();
+            view_total_2();
         }
-    }
-    $tr.remove();
-    cookieProduct.setProduct(myData);
-    count_cart();
-    view_total_2();
+    });
 }
 function add_cart() {
     var comb_price = $("input[name=comb_price]:checked").val().split(":");
@@ -714,4 +738,364 @@ function add_cart() {
     count_cart();
     alert('success');
 //    message_alert('S', 'success');
+}
+function buy_product() {
+    add_cart();
+    window.location = base_url + "/cart/view_cart";
+}
+$("#btn-down").on('click', function () {
+    var $obj = $(this);
+    var myData = new Array();
+    var $tr = $obj.parents('tr');
+    var id_product_combination = $tr.attr('id_product_combination');
+    var price = $tr.attr('price');
+    var qty = 0;
+    var myProduct = cookieProduct.getProduct();
+
+    for (var index in myProduct) {
+        if (myProduct[index].id_combination == id_product_combination) {
+            qty = parseInt(myProduct[index].quantity) - 1;
+            if (qty < 1) {
+                qty = 1;
+            }
+            myData.push({id_combination: id_product_combination, quantity: qty, price: price});
+        } else {
+            myData.push({id_combination: myProduct[index].id_combination, quantity: myProduct[index].quantity, price: myProduct[index].price});
+        }
+    }
+    $tr.find('.view-qty').val(qty);
+    cookieProduct.setProduct(myData);
+    view_total_1($tr, price, qty);
+});
+$("#btn-up").on('click', function () {
+    var $obj = $(this);
+    var myData = new Array();
+    var $tr = $obj.parents('tr');
+    var id_product_combination = $tr.attr('id_product_combination');
+    var price = $tr.attr('price');
+    var qty = 0;
+    var myProduct = cookieProduct.getProduct();
+
+    for (var index in myProduct) {
+        if (myProduct[index].id_combination == id_product_combination) {
+            qty = parseInt(myProduct[index].quantity) + 1;
+            if (qty > 99) {
+                qty = 99;
+            }
+            myData.push({id_combination: id_product_combination, quantity: qty, price: price});
+        } else {
+            myData.push({id_combination: myProduct[index].id_combination, quantity: myProduct[index].quantity, price: myProduct[index].price});
+        }
+    }
+    $tr.find('.view-qty').val(qty);
+    cookieProduct.setProduct(myData);
+    view_total_1($tr, price, qty);
+});
+function view_total_1($tr, price, qty) {
+    $tr.find('.view-total-1').html(parseInt(price * qty));
+    view_total_2();
+}
+function view_total_2() {
+    var view_total_2 = 0;
+    $("#tbl_view_cart").find('.view-total-1').each(function () {
+        view_total_2 += parseInt($(this).html());
+    });
+    $(".view-total-2").html(view_total_2);
+}
+
+
+
+//function minus($obj) {
+//    $('.qty-btn-down').unbind('click');
+//    var myData = new Array();
+//    var $tr = $obj.parents('tr');
+//    var id_product_combination = $tr.attr('id_product_combination');
+//    var price = $tr.attr('price');
+//    var qty = 0;
+//    var myProduct = cookieProduct.getProduct();
+//
+//    for (var index in myProduct) {
+//        if (myProduct[index].id_combination == id_product_combination) {
+//            qty = parseInt(myProduct[index].quantity) - 1;
+//            if (qty < 1) {
+//                qty = 1;
+//            }
+//            myData.push({id_combination: id_product_combination, quantity: qty, price: price});
+//        } else {
+//            myData.push({id_combination: myProduct[index].id_combination, quantity: myProduct[index].quantity, price: myProduct[index].price});
+//        }
+//    }
+//    $tr.find('.view-qty').val(qty);
+//    cookieProduct.setProduct(myData);
+//    view_total_1($tr, price, qty);
+//}
+//function plus($obj) {
+//    $('.qty-btn-up').unbind('click');
+//    var myData = new Array();
+//    var $tr = $obj.parents('tr');
+//    var id_product_combination = $tr.attr('id_product_combination');
+//    var price = $tr.attr('price');
+//    var qty = 0;
+//    var myProduct = cookieProduct.getProduct();
+//
+//    for (var index in myProduct) {
+//        if (myProduct[index].id_combination == id_product_combination) {
+//            qty = parseInt(myProduct[index].quantity) + 1;
+//            if (qty > 99) {
+//                qty = 99;
+//            }
+//            myData.push({id_combination: id_product_combination, quantity: qty, price: price});
+//        } else {
+//            myData.push({id_combination: myProduct[index].id_combination, quantity: myProduct[index].quantity, price: myProduct[index].price});
+//        }
+//    }
+//    $tr.find('.view-qty').val(qty);
+//    cookieProduct.setProduct(myData);
+//    view_total_1($tr, price, qty);
+//}
+
+
+$("#input_select_alias").on("change", function () {
+    $.ajax({
+        type: 'POST',
+        url: base_url + '/home/getAddressById',
+        data: {id_address: $(this).val()},
+        dataType: 'JSON',
+        success: function (response) {
+            console.log(response);
+
+            $("#input_alias").val(response.alias);
+            $("#input_first_name").val(response.first_name);
+            $("#input_last_name").val(response.last_name);
+            $("#input_address").val(response.address);
+            $("#input_distinct").val(response.distinct);
+            $("#input_sub_distinct").val(response.sub_distinct);
+            if (isset(response.id_province)) {
+                $("#input_province").val(response.id_province + '-' + response.province);
+            }
+            $("#input_post_code").val(response.post_code);
+            $("#input_phone_1").val(response.phone_1);
+            $("#input_note").val(response.note);
+        }
+    });
+
+});
+
+$.fn.expandtable = function (options) {
+    var defaults = {
+        type: 'text',
+        align: 'left',
+        visible: true,
+    }
+    function writeRow(record, $object_tr) {
+        var tr = '';
+        for (var i = 0, len = record.length; i < len; i++) {
+            tr += writeColumn(record[i]);
+        }
+        if ($object_tr != '') {
+            return tr;
+        }
+        return '<tr>' + tr + '</tr>';
+    }
+    function writeColumn(record) {
+        var td = '<td ';
+        var html = '';
+        var input = '';
+        var button = '';
+        var image = '';
+
+        var align = (typeof (record.align) === 'undefined') ? defaults.align : record.align;
+        var visible = (typeof (record.visible) === 'undefined') ? defaults.visible : record.visible;
+        var classes = (typeof (record.class) === 'undefined') ? '' : record.class;
+        var type = (typeof (record.type) === 'undefined') ? '' : record.type;
+        var icon = (typeof (record.icon) === 'undefined') ? '' : record.icon;
+        var name = (typeof (record.name) === 'undefined') ? '' : record.name;
+        var value = (typeof (record.value) === 'undefined') ? '' : record.value;
+
+        if (typeof (record.button) !== 'undefined') {
+            td += 'class="text-' + record.button[0].align + '" ';
+        } else {
+            td += 'class="text-' + align + '" ';
+        }
+        if (typeof (record.datarow) !== 'undefined' && record.datarow == true && typeof (record.text) !== 'undefined') {
+            td += 'datarow=' + record.text;
+        }
+        if (!visible || type === 'hidden') {
+            td += 'style="display:none;"';
+        }
+        if (type == 'text' || type == 'hidden') {
+            input += '<input type="' + type + '" ';
+            if (name != '') {
+                input += 'name = "' + name + '" ';
+            }
+            if (value != '') {
+                input += 'value = "' + value + '" ';
+            }
+            if (classes != '') {
+                input += 'class = "' + classes + '" ';
+            }
+            input = $.trim(input) + '>';
+        }
+        if (typeof (record.button) !== 'undefined') {
+            if ($.isArray(record.button)) {
+                button = writeButton(record.button);
+            }
+        }
+        if (typeof (record.text) !== 'undefined') {
+            html += record.text;
+        }
+        if (typeof (record.image) !== 'undefined' && record.image == true) {
+            image += '<img src = "' + record.text + '"  width="32" class="img-thumbnail" >';
+            html = '';
+        }
+        td = $.trim(td) + '>'
+        td += button + image + input + html + '</td>';
+        return td;
+    }
+    function writeButton(record) {
+        var button = '';
+        for (var i = 0, len = record.length; i < len; i++) {
+            var btn = record[i];
+            button += '<button type="button" ';
+            if (typeof (btn.event) !== 'undefined') {
+                button += 'onclick = "' + btn.event + '" ';
+            }
+            if (typeof (btn.toggle) !== 'undefined' && btn.toggle === true) {
+                button += 'data-toggle="tooltip" ';
+            }
+            if (typeof (btn.title) !== 'undefined') {
+                button += 'title = "' + btn.title + '" ';
+            }
+            if (typeof (btn.class) !== 'undefined') {
+                //button += 'class = "btn ' + btn.class + '" ';
+                button += 'class = "' + btn.class + '" ';
+            }
+            button = $.trim(button) + '>';
+            if (typeof (btn.icon) !== 'undefined') {
+                button += '<i class="fa ' + btn.icon + '"></i>';
+            }
+            if (typeof (btn.text) !== 'undefined') {
+                button += ' ' + btn.text;
+            }
+            button += '</button> ';
+        }
+        return button;
+    }
+    var dataset = options.columns;
+    var $object_tr = options.$object_tr || ''; // $object_tr is flag add or update
+    var row = writeRow(dataset, $object_tr);
+    var $this = $(this);
+    if ($object_tr != '') {
+        $object_tr.html(row);
+    } else {
+        $($this).append(row);
+    }
+};
+
+var get_level_table = function ($obj_table, $obj_tr) {
+    var level = parseInt($obj_table.find(" > tbody > tr").length);
+    if ($obj_tr != '') {
+        level = parseInt($obj_tr.find('td').attr('datarow')) - 1;
+    } else if (level == 0) {
+        level = 0;
+    } else {
+        //level = parseInt($obj_table.find(" > tbody > tr:last").find('td').attr('datarow'));
+    }
+    return level;
+}
+
+$(".dialog-product").on('click', function () {
+    $('#table_dyna_product').dynatable({
+        dataset: {
+            ajax: true,
+//            ajaxMethod: 'POST',
+            ajaxUrl: 'http://test.com/css/budden/documentation/dynatable-ajax.json',
+            ajaxOnLoad: true,
+            records: []
+        }
+    });
+    $('#modal_product').css("display", "block");
+});
+
+$(document).on('click', '.onselect', function () {
+//    if ($(this).attr('data-key') == 'select_product') {
+//        select_product(1);
+//    }
+    
+    if ($(this).attr('data-key') == 'select_product') {
+//        console.log('s');
+//        view_detail();
+        $('#modal_product').css("display", "none");
+        $('#modal_view_product').css("display", "block");
+    }
+});
+
+var $object_tr = '';
+var data = {
+    id: '1',
+    name: 'book',
+    qty: '<input type="number" class="input">',
+    price: '<input type="number" class="input">',
+    total: 30,
+    orders_detail_id: 99,
+    product_id: 7,
+};
+
+function select_product(product_id) { // select from dialog
+    $('#modal_product').css("display", "none");
+    var level = get_level_table($("#table_display"), $object_tr);
+    $("#table_display").expandtable({
+        columns: [
+            {text: (level + 1), align: 'center', class: '', datarow: true},
+            {text: data.name, align: 'left', class: ''},
+            {text: data.qty, align: 'right', class: ''},
+            {text: data.price, align: 'right', class: ''},
+            {text: data.total, align: 'right', class: ''},
+            {
+                button: [
+                    {event: 'remove_detail($(this))', align: 'right', class: 'btn-danger btn-sm', icon: 'far fa-trash-alt', toggle: true, title: 'add'},
+                    {event: 'view_detail($(this))', align: 'right', class: 'btn-info btn-sm', icon: 'fas fa-tasks', toggle: true, title: 'remove'}
+                ]
+            },
+            {type: 'hidden', name: 'detail[' + level + '][orders_detail_id]', value: data.orders_detail_id},
+            {type: 'hidden', name: 'detail[' + level + '][product_id]', value: data.product_id},
+            {type: 'hidden', name: 'detail[' + level + '][qty]', value: data.qty},
+        ],
+        $object_tr: $object_tr,
+    });
+    $object_tr = '';
+//    $.ajax({
+//        type: 'POST',
+//        url: base_url + '/middle/product/getProductSelect',
+//        data: {data: product_id},
+//        dataType: 'JSON',
+//        success: function (data) {
+//            //console.log(data); return;
+//            $product_id.val(data.product_id);
+//            $image_small.val(data.image_small);
+//            $reference.val(data.reference);
+//            $product_name.val(data.product_name);
+//            $unit_cost.val(data.unit_cost);
+//            $unit_price.val(data.unit_price);
+//            // qty
+//            set_unit(data.unit, $unit);
+//            // grade
+//        }
+//    });
+}
+
+function remove_detail($obj) {
+    $obj.parent().parent().remove(); // into tr
+    $object_tr = '';
+}
+
+function view_detail(){
+    $('#modal_view_product').css("display", "block");
+}
+
+function setproduct($obj){
+    $('#modal_view_product').css("display", "none");
+    select_product();
+    
+    console.log($("#qty").val());
 }

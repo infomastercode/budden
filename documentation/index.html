@@ -4,8 +4,10 @@
     <title>TEST</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/budden.css">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dynatable/0.3.1/jquery.dynatable.css">
+    <link rel="stylesheet" href="assets/budden.css">
   </head>
   <body>
 
@@ -79,6 +81,7 @@
       <i class="fas fa-igloo"></i>
     </span>
     <span><i class="fas fa-scroll"></i> scroll</span>
+    <span><i class="fas fa-user"></i> user</span>
 
     <hr>
 
@@ -140,6 +143,7 @@
       <input type="text" class="input" placeholder="disabled" disabled>
       <input type="text" class="input" placeholder="readonly" readonly>
       <input type="password" class="input" placeholder="password">
+      <input type="number" class="input" placeholder="number">
       <input type="date" class="input">
       <input type="time" class="input">
       <select class="input">
@@ -902,6 +906,15 @@
 
     <hr>
 
+    <h2 id="top_bottom">top & bottom</h2>
+    <div>
+      <a href="javascript:void(0)" class="on-top">go to top</a>
+      <br>
+      <a href="javascript:void(0)" class="on-bottom">go to bottom</a>
+    </div>
+
+    <hr>
+
     <h2 id="product">Product</h2>
     <div style="width: 50%; border:1px solid gray">
       <div class="text-title">Product</div>
@@ -987,6 +1000,112 @@
       </div>
     </div>
 
+    <hr>
+    <h2 id="login">Login</h2>
+    <div class="container" style="border: 1px solid gray;">
+      <div class="row">
+        <div class="form-group">
+          <div class="col-12">
+            <div class="text-title"><i class="fas fa-user"></i> Login</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-12">
+            <input type="text" name="username" value="" placeholder="username" class="input">
+            <small data-invalid="username" hidden=""></small>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-12">
+            <input type="password" name="password" placeholder="password" value="" class="input">
+            <small data-invalid="password" hidden=""></small>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-12">
+            <button class="btn-info btn-outline">login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+
+    <h2 id="table_select">table_select</h2>
+
+    <div class="container">
+      <div class="table-response">
+        <table class="table" id="table_display">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>name</th>
+              <th>price</th>
+              <th>qty</th>
+              <th>total</th>
+              <th>option</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <a href="javascript:void(0)" class="btn-info dialog-product">select</a>
+      <div id="modal_product" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-body">
+            <div class="table-response">
+              <table id="table_dyna_product" class="table table-bordered table-hover table-condensed">
+                <thead>
+                  <tr>
+                    <th data-dynatable-column="someAttribute">REFERENCE</th>
+                    <th data-dynatable-column="someOtherAttribute">PRODUCT NAME</th>
+                    <th data-dynatable-column="option" data-dynatable-no-sort="true" style="text-align:right;">OPTION</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <h3>Modal Footer</h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="modal_view_product" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-body">
+
+            <label>qty</label>
+            <input type="text" id="qty" class="input">
+
+            <label>price</label>
+            <input type="text" id="price" class="input">
+
+            <button type="button" onclick="setproduct($(this))" class="btn-info btn-outline">login</button>
+
+          </div>
+          <div class="modal-footer">
+            <h3>Modal Footer</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
 
 
 
@@ -997,6 +1116,7 @@
 
     <div style="margin-bottom: 500px"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Dynatable/0.3.1/jquery.dynatable.js"></script>
     <script src="assets/budden.js"></script>
 
   </body>
